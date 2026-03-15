@@ -209,6 +209,9 @@ export default function Home() {
             <a href="#demos" onClick={(e) => handleAnchorClick(e, "#demos")} data-testid="nav-demos">
               Demos
             </a>
+            <a href="#pricing" onClick={(e) => handleAnchorClick(e, "#pricing")} data-testid="nav-pricing">
+              Pricing
+            </a>
             <a href="#audit" onClick={(e) => handleAnchorClick(e, "#audit")} data-testid="nav-audit">
               Audit
             </a>
@@ -252,6 +255,9 @@ export default function Home() {
         </a>
         <a href="#demos" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#demos")}>
           Demo Websites
+        </a>
+        <a href="#pricing" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#pricing")}>
+          Pricing
         </a>
         <a href="#audit" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#audit")}>
           Website Audit
@@ -605,6 +611,156 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Pricing */}
+        <section className="section pricing-section" id="pricing" data-testid="pricing-section">
+          <div className="container">
+            <div className="reveal">
+              <div className="section-label">Investment</div>
+              <h2 className="section-title">
+                Transparent Pricing,
+                <br />
+                Real Results
+              </h2>
+              <p className="section-desc">
+                Every package includes a modern, mobile-optimized website built for clarity, trust, and
+                conversion. Pick the level that matches where your business is headed.
+              </p>
+            </div>
+
+            <div className="pricing-grid">
+              {/* Starter */}
+              <div className="pricing-card reveal" data-testid="pricing-card-starter">
+                <div className="pricing-tier">Starter</div>
+                <h3>Modern Foundation</h3>
+                <div className="pricing-amount">
+                  <span className="pricing-dollar">$1,297</span>
+                </div>
+                <div className="pricing-note">Total project investment</div>
+
+                <div className="pricing-split">
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">Deposit</span>
+                    <span className="pricing-split-value">$597</span>
+                  </div>
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">At Launch</span>
+                    <span className="pricing-split-value">$700</span>
+                  </div>
+                </div>
+
+                <ul className="pricing-features">
+                  <li>Custom modern website design</li>
+                  <li>Mobile-optimized and responsive</li>
+                  <li>Basic on-page SEO setup</li>
+                  <li>Two rounds of revisions</li>
+                  <li>Launch-ready in 2–3 weeks</li>
+                </ul>
+
+                <a
+                  href="#audit"
+                  className="pricing-btn"
+                  onClick={(e) => handleAnchorClick(e, "#audit")}
+                >
+                  Start with an Audit
+                </a>
+              </div>
+
+              {/* Growth (Featured) */}
+              <div className="pricing-card featured reveal reveal-delay-1" data-testid="pricing-card-growth">
+                <div className="pricing-badge">Most Popular</div>
+                <div className="pricing-tier">Growth</div>
+                <h3>Built to Convert</h3>
+                <div className="pricing-amount">
+                  <span className="pricing-dollar">$1,897</span>
+                </div>
+                <div className="pricing-note">Total project investment</div>
+
+                <div className="pricing-split">
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">Deposit</span>
+                    <span className="pricing-split-value">$897</span>
+                  </div>
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">At Launch</span>
+                    <span className="pricing-split-value">$1,000</span>
+                  </div>
+                </div>
+
+                <ul className="pricing-features">
+                  <li>Everything in Starter</li>
+                  <li>Lead capture forms &amp; automation</li>
+                  <li>Google Business integration</li>
+                  <li>Analytics &amp; conversion tracking</li>
+                  <li>AI-powered website audit report</li>
+                  <li>Launch-ready in 2–4 weeks</li>
+                </ul>
+
+                <a
+                  href="#audit"
+                  className="pricing-btn"
+                  onClick={(e) => handleAnchorClick(e, "#audit")}
+                >
+                  Start with an Audit
+                </a>
+              </div>
+
+              {/* Authority */}
+              <div className="pricing-card reveal reveal-delay-2" data-testid="pricing-card-authority">
+                <div className="pricing-tier">Authority</div>
+                <h3>Full Digital Presence</h3>
+                <div className="pricing-amount">
+                  <span className="pricing-dollar">$2,897</span>
+                </div>
+                <div className="pricing-note">Total project investment</div>
+
+                <div className="pricing-split">
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">Deposit</span>
+                    <span className="pricing-split-value">$1,297</span>
+                  </div>
+                  <div className="pricing-split-item">
+                    <span className="pricing-split-label">At Launch</span>
+                    <span className="pricing-split-value">$1,600</span>
+                  </div>
+                </div>
+
+                <ul className="pricing-features">
+                  <li>Everything in Growth</li>
+                  <li>Stripe payment integration</li>
+                  <li>Booking or reservation system</li>
+                  <li>Ongoing SEO content strategy</li>
+                  <li>Before &amp; after case study page</li>
+                  <li>Priority support &amp; faster delivery</li>
+                </ul>
+
+                <a
+                  href="#audit"
+                  className="pricing-btn"
+                  onClick={(e) => handleAnchorClick(e, "#audit")}
+                >
+                  Start with an Audit
+                </a>
+              </div>
+            </div>
+
+            {/* Care Plan */}
+            <div className="care-plan reveal" data-testid="care-plan">
+              <div className="care-plan-text">
+                <h4>Website Care Plan</h4>
+                <p>
+                  Hosting, security updates, uptime monitoring, and priority support. Without it, most
+                  businesses end up paying $300–$500 for emergency fixes within the first six months.
+                </p>
+              </div>
+              <div className="care-plan-pricing">
+                <span className="care-plan-amount">$127</span>
+                <span className="care-plan-period">per month</span>
+                <span className="care-plan-annual">or $1,147/year (save 25%)</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Audit Form */}
         <section className="section audit-section" id="audit" data-testid="audit-section">
           <div className="container">
@@ -893,6 +1049,9 @@ export default function Home() {
               </a>
               <a href="#demos" onClick={(e) => handleAnchorClick(e, "#demos")}>
                 Demos
+              </a>
+              <a href="#pricing" onClick={(e) => handleAnchorClick(e, "#pricing")}>
+                Pricing
               </a>
               <a href="#audit" onClick={(e) => handleAnchorClick(e, "#audit")}>
                 Audit
