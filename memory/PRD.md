@@ -39,11 +39,13 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - [x] SEO metadata (OG tags, Twitter cards, JSON-LD)
 - [x] Google Fonts (DM Sans, DM Serif Display)
 - [x] Responsive design for all breakpoints
-- [x] All sections: Hero, Problem, Process, Demos, Audit, About, CTA, Footer
+- [x] All sections: Hero, Problem, Process, Demos, **Pricing**, Audit, About, CTA, Footer
 - [x] Accessibility: Skip link, ARIA labels, semantic HTML
 - [x] **Restaurant Demo Page** at /demos/restaurant with Before/After toggle
 - [x] Homepage restaurant demo card links to /demos/restaurant
 - [x] Demo page toggle bar CTA links to /#audit
+- [x] **Pricing Section** with 3 tiers (Starter, Growth, Authority) and Care Plan
+- [x] Pricing links in desktop nav, mobile nav, and footer nav
 
 ### Technical Stack
 - Next.js 16.1.6
