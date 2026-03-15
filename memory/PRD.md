@@ -51,6 +51,10 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - [x] Homepage landscaping demo card links to /demos/landscaping
 - [x] Demo page toggle bar CTA links to /#audit
 - [x] **Pricing Section** with 3 tiers (Starter, Growth, Authority) and Care Plan
+- [x] Mobile optimization features in all pricing tiers:
+  - Starter: "Mobile-first, fully responsive" + "Thumb-friendly navigation & tap targets"
+  - Growth: "Advanced mobile speed optimization"
+  - Authority: "Mobile performance monitoring & tuning"
 - [x] Pricing links in desktop nav, mobile nav, and footer nav
 
 ### Technical Stack

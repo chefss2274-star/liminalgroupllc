@@ -622,8 +622,7 @@ export default function Home() {
                 Real Results
               </h2>
               <p className="section-desc">
-                Every package includes a modern, mobile-optimized website built for clarity, trust, and
-                conversion. Pick the level that matches where your business is headed.
+                Every package is built mobile-first — because over 60% of your visitors are on their phone. You get a modern, responsive website designed for clarity, trust, and conversion on every screen size.
               </p>
             </div>
 
@@ -650,7 +649,8 @@ export default function Home() {
 
                 <ul className="pricing-features">
                   <li>Custom modern website design</li>
-                  <li>Mobile-optimized and responsive</li>
+                  <li>Mobile-first, fully responsive on all devices</li>
+                  <li>Thumb-friendly navigation &amp; tap targets</li>
                   <li>Basic on-page SEO setup</li>
                   <li>Two rounds of revisions</li>
                   <li>Launch-ready in 2–3 weeks</li>
@@ -688,6 +688,7 @@ export default function Home() {
 
                 <ul className="pricing-features">
                   <li>Everything in Starter</li>
+                  <li>Advanced mobile speed optimization</li>
                   <li>Lead capture forms &amp; automation</li>
                   <li>Google Business integration</li>
                   <li>Analytics &amp; conversion tracking</li>
@@ -726,6 +727,7 @@ export default function Home() {
 
                 <ul className="pricing-features">
                   <li>Everything in Growth</li>
+                  <li>Mobile performance monitoring &amp; tuning</li>
                   <li>Stripe payment integration</li>
                   <li>Booking or reservation system</li>
                   <li>Ongoing SEO content strategy</li>
