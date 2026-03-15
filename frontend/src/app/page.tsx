@@ -151,22 +151,14 @@ export default function Home() {
       setFormState("sending");
 
       try {
-        // Formspree integration - replace YOUR_FORM_ID with actual Formspree form ID
-        const formspreeId = process.env.NEXT_PUBLIC_FORMSPREE_ID;
-        
-        if (formspreeId) {
-          const response = await fetch(`https://formspree.io/f/${formspreeId}`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(Object.fromEntries(formData.entries())),
-          });
+        const response = await fetch("https://formspree.io/f/mbdzaeya", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(Object.fromEntries(formData.entries())),
+        });
 
-          if (!response.ok) {
-            throw new Error("Form submission failed");
-          }
-        } else {
-          // Simulate submission if no Formspree ID configured
-          await new Promise((resolve) => setTimeout(resolve, 800));
+        if (!response.ok) {
+          throw new Error("Form submission failed");
         }
 
         setFormState("success");
