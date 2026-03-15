@@ -561,9 +561,9 @@ export default function Home() {
                     discovery.
                   </p>
                   <div className="demo-footer">
-                    <a href="#" className="demo-link" aria-label="View landscaping demo (coming soon)">
-                      Coming Soon
-                    </a>
+                    <Link href="/demos/landscaping" className="demo-link" aria-label="View landscaping demo" data-testid="landscaping-demo-link">
+                      View Demo
+                    </Link>
                     <span className="demo-note">Strong visual trust signals</span>
                   </div>
                 </div>
