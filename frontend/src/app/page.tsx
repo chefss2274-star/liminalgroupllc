@@ -41,22 +41,27 @@ export default function Home() {
 
   // Scroll reveal effect
   useEffect(() => {
-    const revealEls = document.querySelectorAll(".reveal");
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
-    );
+    // Small delay to ensure DOM is fully ready after hydration
+    const timer = setTimeout(() => {
+      const revealEls = document.querySelectorAll(".reveal");
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
 
-    revealEls.forEach((el) => revealObserver.observe(el));
+      revealEls.forEach((el) => revealObserver.observe(el));
 
-    return () => revealObserver.disconnect();
+      return () => revealObserver.disconnect();
+    }, 100);
+
+    return () => clearTimeout(timer);
   }, []);
 
   // Close mobile nav on body overflow
