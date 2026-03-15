@@ -959,32 +959,6 @@ export default function Home() {
                   </div>
                 </div>
               </article>
-
-              <article className="about-card reveal reveal-delay-1" data-testid="about-card-2">
-                <h3>What to customize next</h3>
-                <p>
-                  This version is a strong launch point. Replace placeholder form logic, demo links, and contact
-                  information first. Then connect payments, proposals, and automated follow-up.
-                </p>
-                <div className="next-steps">
-                  <div className="next-step">
-                    <span className="step-num">1</span>
-                    <span>Add your real email and contact details</span>
-                  </div>
-                  <div className="next-step">
-                    <span className="step-num">2</span>
-                    <span>Connect the audit form to your email/CRM workflow</span>
-                  </div>
-                  <div className="next-step">
-                    <span className="step-num">3</span>
-                    <span>Swap demo placeholders for live project links</span>
-                  </div>
-                  <div className="next-step">
-                    <span className="step-num">4</span>
-                    <span>Add Stripe payment or proposal flow when ready</span>
-                  </div>
-                </div>
-              </article>
             </div>
           </div>
         </section>
