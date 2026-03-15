@@ -166,12 +166,12 @@ async function generateAiSummary(
   url: string,
   checks: CheckResult[],
   html: string
-): Promise<string> {
+): Promise<{ text: string; error: string }> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
 
   if (!apiKey) {
     console.error("[audit/ai] ANTHROPIC_API_KEY is not set — skipping AI summary");
-    return "";
+    return { text: "", error: "ANTHROPIC_API_KEY is not configured." };
   }
 
   const passed = checks.filter((c) => c.passed);
@@ -233,7 +233,7 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
       console.error(
         `[audit/ai] Anthropic API error — status: ${response.status}, body: ${errorBody}`
       );
-      return "";
+      return { text: "", error: `Anthropic API error ${response.status}: ${errorBody.slice(0, 200)}` };
     }
 
     const data = await response.json();
@@ -242,17 +242,15 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
     const text = data?.content?.[0]?.text ?? "";
     if (!text) {
       console.error("[audit/ai] Unexpected response shape:", JSON.stringify(data));
+      return { text: "", error: `Unexpected response shape: ${JSON.stringify(data).slice(0, 200)}` };
     }
-    return text;
+    return { text, error: "" };
   } catch (err: unknown) {
     const isAbort =
       err instanceof Error && (err.name === "AbortError" || err.name === "TimeoutError");
-    console.error(
-      isAbort
-        ? "[audit/ai] Anthropic API call timed out after 8s"
-        : `[audit/ai] Fetch error: ${err instanceof Error ? err.message : String(err)}`
-    );
-    return "";
+    const errMsg = isAbort ? "Anthropic API call timed out after 8s" : `Fetch error: ${err instanceof Error ? err.message : String(err)}`;
+    console.error(`[audit/ai] ${errMsg}`);
+    return { text: "", error: errMsg };
   }
 }
 
@@ -311,15 +309,16 @@ export async function POST(req: NextRequest) {
     const score = Math.round((passedCount / checks.length) * 100);
     console.log(`[audit] Analysis complete — score: ${score}/100, passed: ${passedCount}/${checks.length}`);
 
-    const aiSummary = await generateAiSummary(url, checks, html);
-    console.log(`[audit] AI summary length: ${aiSummary.length} chars`);
+    const aiResult = await generateAiSummary(url, checks, html);
+    console.log(`[audit] AI summary length: ${aiResult.text.length} chars${aiResult.error ? `, error: ${aiResult.error}` : ""}`);
 
     return NextResponse.json({
       success: true,
       url,
       score,
       checks,
-      ai_summary: aiSummary,
+      ai_summary: aiResult.text,
+      ai_error: aiResult.error || undefined,
     });
   } catch (err: unknown) {
     const isTimeout =

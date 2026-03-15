@@ -16,6 +16,7 @@ interface AuditResult {
   score: number;
   checks: CheckResult[];
   ai_summary: string;
+  ai_error?: string;
   error?: string;
 }
 
@@ -258,7 +259,11 @@ export default function AuditPage() {
                 {result.ai_summary ? (
                   <p className="audit-ai-text">{result.ai_summary}</p>
                 ) : (
-                  <p className="audit-ai-loading">AI summary unavailable. To enable, add <code>ANTHROPIC_API_KEY</code> in your Vercel environment variables.</p>
+                  <p className="audit-ai-loading">
+                    {result.ai_error
+                      ? `AI summary error: ${result.ai_error}`
+                      : "AI summary unavailable — add ANTHROPIC_API_KEY in Vercel to enable."}
+                  </p>
                 )}
               </div>
 
