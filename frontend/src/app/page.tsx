@@ -116,6 +116,9 @@ export default function Home() {
             <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")} data-testid="nav-about">
               About
             </a>
+            <Link href="/why-mobile" data-testid="nav-why-mobile">
+              Why Mobile
+            </Link>
           </nav>
 
           <Link
@@ -162,6 +165,9 @@ export default function Home() {
         <a href="#about" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#about")}>
           About
         </a>
+        <Link href="/why-mobile" className="mobile-nav-link">
+          Why Mobile
+        </Link>
         <a href="#contact" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#contact")}>
           Contact
         </a>
@@ -774,6 +780,9 @@ export default function Home() {
               <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")}>
                 About
               </a>
+              <Link href="/why-mobile">
+                Why Mobile
+              </Link>
               <a href="mailto:admin@liminalgroupllc.com">Contact</a>
             </nav>
           </div>
