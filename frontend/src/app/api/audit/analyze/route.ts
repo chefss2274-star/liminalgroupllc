@@ -80,7 +80,7 @@ function analyzeHtml(html: string, url: string): CheckResult[] {
   // 6. Image Alt Text
   const images = html.match(/<img[^>]*>/gi) || [];
   const withAlt = images.filter(
-    (img) => /alt=/i.test(img) && !/alt=[\"'][\"']/i.test(img)
+    (img) => /alt=/i.test(img) && !/alt=[""][""]/i.test(img)
   ).length;
   const totalImgs = images.length;
   const altPassed =
@@ -168,7 +168,9 @@ async function generateAiSummary(
   html: string
 ): Promise<string> {
   const apiKey = process.env.ANTHROPIC_API_KEY;
+
   if (!apiKey) {
+    console.error("[audit/ai] ANTHROPIC_API_KEY is not set — skipping AI summary");
     return "";
   }
 
@@ -205,6 +207,9 @@ Write a 3-4 paragraph summary that:
 Keep it professional but direct. Use "you/your" to address the business owner. Don't be overly negative — frame issues as opportunities.`;
 
   try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -215,14 +220,38 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
       body: JSON.stringify({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 600,
+        system: "You are a helpful website consultant who provides clear, actionable advice for small business owners.",
         messages: [{ role: "user", content: prompt }],
       }),
+      signal: controller.signal,
     });
 
-    if (!response.ok) return "";
+    clearTimeout(timeout);
+
+    if (!response.ok) {
+      const errorBody = await response.text();
+      console.error(
+        `[audit/ai] Anthropic API error — status: ${response.status}, body: ${errorBody}`
+      );
+      return "";
+    }
+
     const data = await response.json();
-    return data?.content?.[0]?.text ?? "";
-  } catch {
+    console.log("[audit/ai] Anthropic response received, stop_reason:", data?.stop_reason);
+
+    const text = data?.content?.[0]?.text ?? "";
+    if (!text) {
+      console.error("[audit/ai] Unexpected response shape:", JSON.stringify(data));
+    }
+    return text;
+  } catch (err: unknown) {
+    const isAbort =
+      err instanceof Error && (err.name === "AbortError" || err.name === "TimeoutError");
+    console.error(
+      isAbort
+        ? "[audit/ai] Anthropic API call timed out after 8s"
+        : `[audit/ai] Fetch error: ${err instanceof Error ? err.message : String(err)}`
+    );
     return "";
   }
 }
@@ -251,16 +280,19 @@ export async function POST(req: NextRequest) {
     url = "https://" + url;
   }
 
+  console.log(`[audit] Starting analysis for: ${url}`);
+
   try {
     const fetchRes = await fetch(url, {
       headers: {
         "User-Agent":
           "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
       },
-      signal: AbortSignal.timeout(15000),
+      signal: AbortSignal.timeout(10000),
     });
 
     if (!fetchRes.ok) {
+      console.error(`[audit] Failed to fetch ${url} — status: ${fetchRes.status}`);
       return NextResponse.json({
         success: false,
         url,
@@ -272,10 +304,15 @@ export async function POST(req: NextRequest) {
     }
 
     const html = await fetchRes.text();
+    console.log(`[audit] Fetched ${html.length} bytes from ${url}`);
+
     const checks = analyzeHtml(html, url);
     const passedCount = checks.filter((c) => c.passed).length;
     const score = Math.round((passedCount / checks.length) * 100);
+    console.log(`[audit] Analysis complete — score: ${score}/100, passed: ${passedCount}/${checks.length}`);
+
     const aiSummary = await generateAiSummary(url, checks, html);
+    console.log(`[audit] AI summary length: ${aiSummary.length} chars`);
 
     return NextResponse.json({
       success: true,
@@ -287,15 +324,17 @@ export async function POST(req: NextRequest) {
   } catch (err: unknown) {
     const isTimeout =
       err instanceof Error && (err.name === "TimeoutError" || err.name === "AbortError");
+    const message = isTimeout
+      ? "Request timed out. The website took too long to respond."
+      : `Error analyzing website: ${err instanceof Error ? err.message : String(err)}`;
+    console.error(`[audit] ${message}`);
     return NextResponse.json({
       success: false,
       url,
       score: 0,
       checks: [],
       ai_summary: "",
-      error: isTimeout
-        ? "Request timed out. The website took too long to respond."
-        : `Error analyzing website: ${err instanceof Error ? err.message : String(err)}`,
+      error: message,
     });
   }
 }

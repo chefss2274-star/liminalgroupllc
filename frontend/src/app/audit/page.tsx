@@ -258,7 +258,7 @@ export default function AuditPage() {
                 {result.ai_summary ? (
                   <p className="audit-ai-text">{result.ai_summary}</p>
                 ) : (
-                  <p className="audit-ai-loading">Generating AI insights...</p>
+                  <p className="audit-ai-loading">AI summary unavailable. To enable, add <code>ANTHROPIC_API_KEY</code> in your Vercel environment variables.</p>
                 )}
               </div>
 
