@@ -41,6 +41,9 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - [x] Responsive design for all breakpoints
 - [x] All sections: Hero, Problem, Process, Demos, Audit, About, CTA, Footer
 - [x] Accessibility: Skip link, ARIA labels, semantic HTML
+- [x] **Restaurant Demo Page** at /demos/restaurant with Before/After toggle
+- [x] Homepage restaurant demo card links to /demos/restaurant
+- [x] Demo page toggle bar CTA links to /#audit
 
 ### Technical Stack
 - Next.js 16.1.6
@@ -52,6 +55,8 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - `/app/frontend/src/app/page.tsx` - Main page component
 - `/app/frontend/src/app/globals.css` - All styles
 - `/app/frontend/src/app/layout.tsx` - Layout with metadata
+- `/app/frontend/src/app/demos/restaurant/page.tsx` - Restaurant demo with Before/After toggle
+- `/app/frontend/src/app/demos/restaurant/layout.tsx` - Restaurant demo layout with fonts
 - `/app/frontend/.env.local` - Environment variables
 - `/app/frontend/vercel.json` - Vercel config
 - `/app/frontend/README.md` - Documentation
@@ -73,8 +78,7 @@ All core requirements delivered
 - [ ] Replace placeholder contact email (hello@liminalgroupllc.com)
 
 ### P2 - Future Enhancements
-- [ ] Add actual demo website links (currently "Coming Soon")
-- [ ] Create individual demo pages
+- [ ] Add more demo pages (Roofing, Plumbing, Landscaping - currently "Coming Soon")
 - [ ] Add analytics (Google Analytics, Vercel Analytics)
 - [ ] Add cookie consent banner (if needed)
 - [ ] Add testimonials section
