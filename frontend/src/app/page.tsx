@@ -296,6 +296,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Mobile Stats */}
+        <section className="mobile-stats-section" data-testid="mobile-stats-section">
+          <div className="container">
+            <div className="mobile-stats-header reveal">
+              <h2 className="mobile-stats-headline">Your Customers Are on Their Phones</h2>
+              <Link href="/why-mobile" className="mobile-stats-link">
+                See what they experience →
+              </Link>
+            </div>
+            <div className="mobile-stats-grid">
+              <div className="mobile-stat reveal">
+                <div className="mobile-stat-number">61%</div>
+                <div className="mobile-stat-label">Mobile Traffic</div>
+                <div className="mobile-stat-desc">of all website visits come from mobile devices</div>
+              </div>
+              <div className="mobile-stat reveal reveal-delay-1">
+                <div className="mobile-stat-number">53%</div>
+                <div className="mobile-stat-label">Bounce Rate</div>
+                <div className="mobile-stat-desc">leave if a page takes over 3 seconds to load</div>
+              </div>
+              <div className="mobile-stat reveal reveal-delay-2">
+                <div className="mobile-stat-number">74%</div>
+                <div className="mobile-stat-label">Return Rate</div>
+                <div className="mobile-stat-desc">more likely to return to a mobile-friendly site</div>
+              </div>
+              <div className="mobile-stat reveal reveal-delay-3">
+                <div className="mobile-stat-number">50%</div>
+                <div className="mobile-stat-label">Online Purchases</div>
+                <div className="mobile-stat-desc">of all e-commerce sales happen on mobile</div>
+              </div>
+            </div>
+          </div>
+        </section>
         {/* Process */}
         <section className="section process-section" data-testid="process-section">
           <div className="container">
@@ -357,24 +390,14 @@ export default function Home() {
               {/* Demo Card 1 - Roofing */}
               <article className="demo-card reveal" data-testid="demo-card-roofing">
                 <div className="demo-visual">
-                  <div className="mock-browser">
-                    <div className="mock-toolbar">
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                    </div>
-                    <div className="mock-content">
-                      <div className="mock-sidebar">
-                        <div className="mock-line" style={{ width: "80%" }}></div>
-                        <div className="mock-line" style={{ width: "60%" }}></div>
-                        <div className="mock-line" style={{ width: "45%" }}></div>
-                        <div className="mock-block"></div>
-                      </div>
-                      <div className="mock-panels">
-                        <div className="mock-panel"></div>
-                        <div className="mock-panel"></div>
-                      </div>
-                    </div>
+                  <div className="demo-image-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1632759145351-1d592919f522?w=600&q=80"
+                      alt="Roofing company website preview"
+                      className="demo-preview-img"
+                      loading="lazy"
+                    />
+                    <div className="demo-image-overlay" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div className="demo-body">
@@ -396,24 +419,14 @@ export default function Home() {
               {/* Demo Card 2 - Plumbing */}
               <article className="demo-card reveal reveal-delay-1" data-testid="demo-card-plumbing">
                 <div className="demo-visual">
-                  <div className="mock-browser">
-                    <div className="mock-toolbar">
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                    </div>
-                    <div className="mock-content">
-                      <div className="mock-sidebar">
-                        <div className="mock-line" style={{ width: "72%" }}></div>
-                        <div className="mock-line" style={{ width: "55%" }}></div>
-                        <div className="mock-line" style={{ width: "38%" }}></div>
-                        <div className="mock-block"></div>
-                      </div>
-                      <div className="mock-panels">
-                        <div className="mock-panel"></div>
-                        <div className="mock-panel"></div>
-                      </div>
-                    </div>
+                  <div className="demo-image-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80"
+                      alt="Plumbing company website preview"
+                      className="demo-preview-img"
+                      loading="lazy"
+                    />
+                    <div className="demo-image-overlay" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div className="demo-body">
@@ -435,24 +448,14 @@ export default function Home() {
               {/* Demo Card 3 - Landscaping */}
               <article className="demo-card reveal reveal-delay-2" data-testid="demo-card-landscaping">
                 <div className="demo-visual">
-                  <div className="mock-browser">
-                    <div className="mock-toolbar">
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                    </div>
-                    <div className="mock-content">
-                      <div className="mock-sidebar">
-                        <div className="mock-line" style={{ width: "76%" }}></div>
-                        <div className="mock-line" style={{ width: "58%" }}></div>
-                        <div className="mock-line" style={{ width: "42%" }}></div>
-                        <div className="mock-block"></div>
-                      </div>
-                      <div className="mock-panels">
-                        <div className="mock-panel"></div>
-                        <div className="mock-panel"></div>
-                      </div>
-                    </div>
+                  <div className="demo-image-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80"
+                      alt="Landscaping business website preview"
+                      className="demo-preview-img"
+                      loading="lazy"
+                    />
+                    <div className="demo-image-overlay" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div className="demo-body">
@@ -474,24 +477,14 @@ export default function Home() {
               {/* Demo Card 4 - Restaurant */}
               <article className="demo-card reveal reveal-delay-3" data-testid="demo-card-restaurant">
                 <div className="demo-visual">
-                  <div className="mock-browser">
-                    <div className="mock-toolbar">
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                      <span className="mock-dot"></span>
-                    </div>
-                    <div className="mock-content">
-                      <div className="mock-sidebar">
-                        <div className="mock-line" style={{ width: "68%" }}></div>
-                        <div className="mock-line" style={{ width: "50%" }}></div>
-                        <div className="mock-line" style={{ width: "35%" }}></div>
-                        <div className="mock-block"></div>
-                      </div>
-                      <div className="mock-panels">
-                        <div className="mock-panel"></div>
-                        <div className="mock-panel"></div>
-                      </div>
-                    </div>
+                  <div className="demo-image-wrap">
+                    <img
+                      src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80"
+                      alt="Restaurant website preview"
+                      className="demo-preview-img"
+                      loading="lazy"
+                    />
+                    <div className="demo-image-overlay" aria-hidden="true"></div>
                   </div>
                 </div>
                 <div className="demo-body">
