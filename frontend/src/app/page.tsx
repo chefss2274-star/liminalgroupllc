@@ -483,9 +483,9 @@ export default function Home() {
                     capture.
                   </p>
                   <div className="demo-footer">
-                    <a href="#" className="demo-link" aria-label="View roofing demo (coming soon)">
-                      Coming Soon
-                    </a>
+                    <Link href="/demos/roofing" className="demo-link" aria-label="View roofing demo" data-testid="roofing-demo-link">
+                      View Demo
+                    </Link>
                     <span className="demo-note">Lead-focused structure</span>
                   </div>
                 </div>
