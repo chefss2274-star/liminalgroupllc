@@ -45,6 +45,8 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - [x] Homepage restaurant demo card links to /demos/restaurant
 - [x] **Roofing Demo Page** at /demos/roofing with Before/After toggle
 - [x] Homepage roofing demo card links to /demos/roofing
+- [x] **Plumbing Demo Page** at /demos/plumbing with Before/After toggle
+- [x] Homepage plumbing demo card links to /demos/plumbing
 - [x] Demo page toggle bar CTA links to /#audit
 - [x] **Pricing Section** with 3 tiers (Starter, Growth, Authority) and Care Plan
 - [x] Pricing links in desktop nav, mobile nav, and footer nav
@@ -63,6 +65,8 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - `/app/frontend/src/app/demos/restaurant/layout.tsx` - Restaurant demo layout with fonts
 - `/app/frontend/src/app/demos/roofing/page.tsx` - Roofing demo with Before/After toggle
 - `/app/frontend/src/app/demos/roofing/layout.tsx` - Roofing demo layout with fonts
+- `/app/frontend/src/app/demos/plumbing/page.tsx` - Plumbing demo with Before/After toggle
+- `/app/frontend/src/app/demos/plumbing/layout.tsx` - Plumbing demo layout with fonts
 - `/app/frontend/.env.local` - Environment variables
 - `/app/frontend/vercel.json` - Vercel config
 - `/app/frontend/README.md` - Documentation
@@ -84,7 +88,7 @@ All core requirements delivered
 - [ ] Replace placeholder contact email (hello@liminalgroupllc.com)
 
 ### P2 - Future Enhancements
-- [ ] Add more demo pages (Plumbing, Landscaping - currently "Coming Soon")
+- [ ] Add Landscaping demo page (last remaining "Coming Soon" demo)
 - [ ] Add analytics (Google Analytics, Vercel Analytics)
 - [ ] Add cookie consent banner (if needed)
 - [ ] Add testimonials section

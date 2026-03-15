@@ -522,9 +522,9 @@ export default function Home() {
                     clearer CTA path.
                   </p>
                   <div className="demo-footer">
-                    <a href="#" className="demo-link" aria-label="View plumbing demo (coming soon)">
-                      Coming Soon
-                    </a>
+                    <Link href="/demos/plumbing" className="demo-link" aria-label="View plumbing demo" data-testid="plumbing-demo-link">
+                      View Demo
+                    </Link>
                     <span className="demo-note">Built for calls &amp; quotes</span>
                   </div>
                 </div>
