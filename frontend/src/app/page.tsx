@@ -212,22 +212,21 @@ export default function Home() {
             <a href="#pricing" onClick={(e) => handleAnchorClick(e, "#pricing")} data-testid="nav-pricing">
               Pricing
             </a>
-            <a href="#audit" onClick={(e) => handleAnchorClick(e, "#audit")} data-testid="nav-audit">
+            <Link href="/audit" data-testid="nav-audit">
               Audit
-            </a>
+            </Link>
             <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")} data-testid="nav-about">
               About
             </a>
           </nav>
 
-          <a
-            href="#audit"
+          <Link
+            href="/audit"
             className="nav-cta"
-            onClick={(e) => handleAnchorClick(e, "#audit")}
             data-testid="nav-cta"
           >
             Free Website Audit
-          </a>
+          </Link>
 
           <button
             className={`menu-toggle ${mobileNavOpen ? "active" : ""}`}
@@ -259,9 +258,9 @@ export default function Home() {
         <a href="#pricing" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#pricing")}>
           Pricing
         </a>
-        <a href="#audit" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#audit")}>
+        <Link href="/audit" className="mobile-nav-link">
           Website Audit
-        </a>
+        </Link>
         <a href="#about" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#about")}>
           About
         </a>
@@ -288,14 +287,13 @@ export default function Home() {
                 real customers.
               </p>
               <div className="hero-actions reveal reveal-delay-3">
-                <a
-                  href="#audit"
+                <Link
+                  href="/audit"
                   className="btn btn-primary"
-                  onClick={(e) => handleAnchorClick(e, "#audit")}
                   data-testid="hero-cta-primary"
                 >
                   Get Your Free Audit
-                </a>
+                </Link>
                 <a
                   href="#demos"
                   className="btn btn-secondary"
@@ -656,13 +654,12 @@ export default function Home() {
                   <li>Launch-ready in 2–3 weeks</li>
                 </ul>
 
-                <a
-                  href="#audit"
+                <Link
+                  href="/audit"
                   className="pricing-btn"
-                  onClick={(e) => handleAnchorClick(e, "#audit")}
                 >
                   Start with an Audit
-                </a>
+                </Link>
               </div>
 
               {/* Growth (Featured) */}
@@ -696,13 +693,12 @@ export default function Home() {
                   <li>Launch-ready in 2–4 weeks</li>
                 </ul>
 
-                <a
-                  href="#audit"
+                <Link
+                  href="/audit"
                   className="pricing-btn"
-                  onClick={(e) => handleAnchorClick(e, "#audit")}
                 >
                   Start with an Audit
-                </a>
+                </Link>
               </div>
 
               {/* Authority */}
@@ -735,13 +731,12 @@ export default function Home() {
                   <li>Priority support &amp; faster delivery</li>
                 </ul>
 
-                <a
-                  href="#audit"
+                <Link
+                  href="/audit"
                   className="pricing-btn"
-                  onClick={(e) => handleAnchorClick(e, "#audit")}
                 >
                   Start with an Audit
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -1015,14 +1010,13 @@ export default function Home() {
                 <p>Start with a free website audit and discover how your business can move forward online.</p>
               </div>
               <div className="cta-actions">
-                <a
-                  href="#audit"
+                <Link
+                  href="/audit"
                   className="btn-cta-primary"
-                  onClick={(e) => handleAnchorClick(e, "#audit")}
                   data-testid="cta-audit-button"
                 >
                   Request Website Audit
-                </a>
+                </Link>
                 <a href="mailto:hello@liminalgroupllc.com" className="btn-cta-secondary" data-testid="cta-email">
                   hello@liminalgroupllc.com
                 </a>
@@ -1055,9 +1049,9 @@ export default function Home() {
               <a href="#pricing" onClick={(e) => handleAnchorClick(e, "#pricing")}>
                 Pricing
               </a>
-              <a href="#audit" onClick={(e) => handleAnchorClick(e, "#audit")}>
+              <Link href="/audit">
                 Audit
-              </a>
+              </Link>
               <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")}>
                 About
               </a>

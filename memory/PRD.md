@@ -57,7 +57,23 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
   - Problem cards (text too small, buttons too small, slow load)
   - Side-by-side phone comparison showing before/after mobile design
   - What We Fix section with 6 problem/solution cards
-  - CTA section linking to homepage /#audit and /#pricing
+  - CTA section linking to /audit and /#pricing
+- [x] **AI-Powered Website Audit Page** at /audit - Standalone lead capture tool
+  - Form to collect name, business name, website URL, and email
+  - Backend API that fetches and analyzes website HTML
+  - 10 automated checks: HTTPS, Mobile Viewport, Title, Meta Description, H1, Image Alt Text, Internal Navigation, Call to Action, Contact Information, Page Optimization
+  - AI-generated summary using Claude Sonnet analyzing the audit results
+  - Score display with color-coded pass/fail indicators
+  - CTA bar linking to pricing section
+- [x] Homepage navigation updated to link to /audit instead of #audit section
+  - Header "Free Website Audit" CTA → /audit
+  - Nav "Audit" link → /audit
+  - Mobile nav "Website Audit" link → /audit
+  - Hero "Get Your Free Audit" button → /audit
+  - All pricing card "Start with an Audit" buttons → /audit
+  - Bottom CTA "Request Website Audit" button → /audit
+  - Footer "Audit" link → /audit
+- [x] Why Mobile page CTAs updated to link to /audit
 - [x] Mobile optimization features in all pricing tiers:
   - Starter: "Mobile-first, fully responsive" + "Thumb-friendly navigation & tap targets"
   - Growth: "Advanced mobile speed optimization"
@@ -68,7 +84,9 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - Next.js 16.1.6
 - TypeScript
 - CSS Custom Properties (no Tailwind)
-- Formspree (form handling)
+- FastAPI Backend with Python
+- Claude Sonnet AI (via Emergent LLM Key)
+- Formspree (form handling on homepage - pending user ID)
 
 ### Files Created
 - `/app/frontend/src/app/page.tsx` - Main page component
@@ -84,6 +102,9 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - `/app/frontend/src/app/demos/plumbing/layout.tsx` - Plumbing demo layout with fonts
 - `/app/frontend/src/app/why-mobile/page.tsx` - Why Mobile Matters educational page
 - `/app/frontend/src/app/why-mobile/layout.tsx` - Why Mobile layout with metadata
+- `/app/frontend/src/app/audit/page.tsx` - AI-powered website audit tool
+- `/app/frontend/src/app/audit/layout.tsx` - Audit page layout with metadata
+- `/app/backend/routes/audit.py` - Backend API for website analysis
 - `/app/frontend/.env.local` - Environment variables
 - `/app/frontend/vercel.json` - Vercel config
 - `/app/frontend/README.md` - Documentation
@@ -112,7 +133,7 @@ All core requirements delivered
 
 ## Next Tasks
 1. Deploy to Vercel via Git push
-2. Configure Formspree form ID in Vercel environment variables
+2. Configure Formspree form ID in Vercel environment variables (for homepage form, not /audit page)
 3. Add real contact information
 4. Add remaining demo pages (eCommerce, Lead Gen) when HTML files provided
-5. Add link to /why-mobile page from homepage (optional - can be linked from marketing campaigns)
+5. Consider adding link to /why-mobile page from homepage navigation (optional - can be linked from marketing campaigns)

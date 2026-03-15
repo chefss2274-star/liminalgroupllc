@@ -41,7 +41,7 @@ export default function WhyMobilePage() {
             Over 60% of your visitors are on their phone. If your site isn&apos;t built for mobile, they&apos;re leaving before they ever become a customer. And most of them never come back.
           </p>
           <div className="hero-actions reveal rd3 visible">
-            <Link href="/#audit" className="btn btn-dark" data-testid="wm-cta-audit">
+            <Link href="/audit" className="btn btn-dark" data-testid="wm-cta-audit">
               Get Your Free Audit
             </Link>
             <a href="#comparison" className="btn btn-outline" data-testid="wm-cta-comparison">
@@ -283,7 +283,7 @@ export default function WhyMobilePage() {
               <p>Every Liminal website package is built mobile-first — responsive design, fast load times, and thumb-friendly CTAs are included at every tier, not sold as an add-on. Start with a free audit.</p>
             </div>
             <div className="cta-actions">
-              <Link href="/#audit" className="btn-cta-light" data-testid="wm-footer-cta-audit">
+              <Link href="/audit" className="btn-cta-light" data-testid="wm-footer-cta-audit">
                 Get Your Free Audit
               </Link>
               <Link href="/#pricing" className="btn-cta-ghost" data-testid="wm-footer-cta-pricing">
