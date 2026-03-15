@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
 
 // SVG Logo Component
@@ -26,19 +26,9 @@ const BrandMark = ({ className = "", style }: { className?: string; style?: Reac
   </svg>
 );
 
-// Success Check SVG
-const SuccessCheck = () => (
-  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-    <circle cx="24" cy="24" r="24" fill="rgba(124,105,85,0.1)" />
-    <path d="M16 24l6 6 10-12" stroke="#7c6955" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
 
 export default function Home() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const [formState, setFormState] = useState<"idle" | "sending" | "success">("idle");
-  const [formErrors, setFormErrors] = useState<Record<string, boolean>>({});
-  const formRef = useRef<HTMLFormElement>(null);
 
   // Scroll reveal effect
   useEffect(() => {
@@ -85,90 +75,6 @@ export default function Home() {
     }
   }, []);
 
-  // Form validation
-  const validateField = useCallback((name: string, value: string, type: string): boolean => {
-    if (!value.trim()) return false;
-    if (type === "email") {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    }
-    if (type === "url") {
-      return /^https?:\/\/.+\..+/.test(value);
-    }
-    return true;
-  }, []);
-
-  const handleInputBlur = useCallback(
-    (e: React.FocusEvent<HTMLInputElement>) => {
-      const { name, value, type } = e.target;
-      const isValid = validateField(name, value, type);
-      setFormErrors((prev) => ({ ...prev, [name]: !isValid }));
-    },
-    [validateField]
-  );
-
-  const handleInputChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const { name, value, type } = e.target;
-      if (formErrors[name]) {
-        const isValid = validateField(name, value, type);
-        if (isValid) {
-          setFormErrors((prev) => ({ ...prev, [name]: false }));
-        }
-      }
-    },
-    [formErrors, validateField]
-  );
-
-  const handleFormSubmit = useCallback(
-    async (e: React.FormEvent<HTMLFormElement>) => {
-      e.preventDefault();
-      const form = formRef.current;
-      if (!form) return;
-
-      const formData = new FormData(form);
-      const errors: Record<string, boolean> = {};
-      let hasErrors = false;
-
-      const fields = [
-        { name: "name", type: "text" },
-        { name: "business", type: "text" },
-        { name: "website", type: "url" },
-        { name: "email", type: "email" },
-      ];
-
-      fields.forEach(({ name, type }) => {
-        const value = formData.get(name) as string;
-        const isValid = validateField(name, value, type);
-        if (!isValid) {
-          errors[name] = true;
-          hasErrors = true;
-        }
-      });
-
-      setFormErrors(errors);
-      if (hasErrors) return;
-
-      setFormState("sending");
-
-      try {
-        const response = await fetch("https://formspree.io/f/mbdzaeya", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(Object.fromEntries(formData.entries())),
-        });
-
-        if (!response.ok) {
-          throw new Error("Form submission failed");
-        }
-
-        setFormState("success");
-      } catch {
-        setFormState("idle");
-        alert("Something went wrong. Please try again or email us directly at hello@liminalgroupllc.com");
-      }
-    },
-    [validateField]
-  );
 
   return (
     <>
@@ -753,173 +659,20 @@ export default function Home() {
         {/* Audit Form */}
         <section className="section audit-section" id="audit" data-testid="audit-section">
           <div className="container">
-            <div className="reveal">
-              <div className="section-label">Lead Magnet</div>
+            <div className="audit-cta-block reveal">
+              <div className="section-label">Free Audit</div>
               <h2 className="section-title">
                 Find Out What Your
                 <br />
                 Website Is Missing
               </h2>
               <p className="section-desc">
-                Request a free AI-powered website audit. We&apos;ll highlight the biggest opportunities for
-                improvement in design, mobile usability, lead capture, and trust signals.
+                Get a free AI-powered audit of your site in minutes. We&apos;ll surface the biggest
+                opportunities in design, mobile usability, lead capture, and trust signals.
               </p>
-            </div>
-
-            <div className="audit-layout">
-              <div className="audit-form-card reveal" data-testid="audit-form-card">
-                {formState !== "success" ? (
-                  <div id="auditFormWrapper">
-                    <h3>Free Website Audit</h3>
-                    <p>
-                      Enter your details below and we&apos;ll send you a quick audit highlighting what&apos;s
-                      working and what&apos;s not.
-                    </p>
-
-                    <form
-                      ref={formRef}
-                      id="auditForm"
-                      noValidate
-                      onSubmit={handleFormSubmit}
-                      className={formState === "sending" ? "form-sending" : ""}
-                      data-testid="audit-form"
-                    >
-                      <div className={`form-group ${formErrors.name ? "has-error" : ""}`}>
-                        <label htmlFor="audit-name">
-                          Name <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                          id="audit-name"
-                          name="name"
-                          type="text"
-                          placeholder="Your name"
-                          required
-                          autoComplete="name"
-                          className={formErrors.name ? "error" : ""}
-                          onBlur={handleInputBlur}
-                          onChange={handleInputChange}
-                          data-testid="input-name"
-                        />
-                        <div className="form-error">Please enter your name.</div>
-                      </div>
-                      <div className={`form-group ${formErrors.business ? "has-error" : ""}`}>
-                        <label htmlFor="audit-business">
-                          Business Name <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                          id="audit-business"
-                          name="business"
-                          type="text"
-                          placeholder="Your business name"
-                          required
-                          className={formErrors.business ? "error" : ""}
-                          onBlur={handleInputBlur}
-                          onChange={handleInputChange}
-                          data-testid="input-business"
-                        />
-                        <div className="form-error">Please enter your business name.</div>
-                      </div>
-                      <div className={`form-group ${formErrors.website ? "has-error" : ""}`}>
-                        <label htmlFor="audit-website">
-                          Website URL <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                          id="audit-website"
-                          name="website"
-                          type="url"
-                          placeholder="https://yourwebsite.com"
-                          required
-                          className={formErrors.website ? "error" : ""}
-                          onBlur={handleInputBlur}
-                          onChange={handleInputChange}
-                          data-testid="input-website"
-                        />
-                        <div className="form-error">Please enter a valid website URL (include https://).</div>
-                      </div>
-                      <div className={`form-group ${formErrors.email ? "has-error" : ""}`}>
-                        <label htmlFor="audit-email">
-                          Email Address <span aria-hidden="true">*</span>
-                        </label>
-                        <input
-                          id="audit-email"
-                          name="email"
-                          type="email"
-                          placeholder="name@company.com"
-                          required
-                          autoComplete="email"
-                          className={formErrors.email ? "error" : ""}
-                          onBlur={handleInputBlur}
-                          onChange={handleInputChange}
-                          data-testid="input-email"
-                        />
-                        <div className="form-error">Please enter a valid email address.</div>
-                      </div>
-                      <button
-                        className="btn btn-primary form-submit"
-                        type="submit"
-                        data-testid="submit-button"
-                      >
-                        {formState === "sending" ? "Sending..." : "Generate Website Audit"}
-                      </button>
-                    </form>
-                  </div>
-                ) : (
-                  <div className="form-success active" id="auditSuccess" data-testid="form-success">
-                    <SuccessCheck />
-                    <h4>Audit Request Received</h4>
-                    <p>We&apos;ll review your website and send a detailed audit to your inbox within 24 hours.</p>
-                  </div>
-                )}
-              </div>
-
-              <div className="audit-info reveal reveal-delay-1" data-testid="audit-info">
-                <h3>What the audit covers</h3>
-                <p>
-                  The strongest audits point to revenue being lost — not just design being old. Here&apos;s what
-                  we evaluate:
-                </p>
-
-                <div className="audit-checklist">
-                  <div className="audit-item">
-                    <div className="audit-icon" aria-hidden="true">
-                      &#10003;
-                    </div>
-                    <div>
-                      <strong>Mobile usability</strong>
-                      <span>How well the site performs for the visitors most likely to bounce fast.</span>
-                    </div>
-                  </div>
-                  <div className="audit-item">
-                    <div className="audit-icon" aria-hidden="true">
-                      &#10003;
-                    </div>
-                    <div>
-                      <strong>Lead capture &amp; calls to action</strong>
-                      <span>Whether the site gives people a clear path to call, book, or request a quote.</span>
-                    </div>
-                  </div>
-                  <div className="audit-item">
-                    <div className="audit-icon" aria-hidden="true">
-                      &#10003;
-                    </div>
-                    <div>
-                      <strong>Trust &amp; credibility signals</strong>
-                      <span>
-                        Reviews, proof, service clarity, and the structure that makes a business feel credible.
-                      </span>
-                    </div>
-                  </div>
-                  <div className="audit-item">
-                    <div className="audit-icon" aria-hidden="true">
-                      &#10003;
-                    </div>
-                    <div>
-                      <strong>Overall design friction</strong>
-                      <span>The weak points making people leave before they ever become customers.</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Link href="/audit" className="btn btn-primary" data-testid="audit-cta-link">
+                Get Your Free Website Audit
+              </Link>
             </div>
           </div>
         </section>
