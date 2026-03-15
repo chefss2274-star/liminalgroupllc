@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Link from "next/link";
 
 // SVG Logo Component
 const BrandMark = ({ className = "", style }: { className?: string; style?: React.CSSProperties }) => (
@@ -593,9 +594,9 @@ export default function Home() {
                     customer engagement.
                   </p>
                   <div className="demo-footer">
-                    <a href="#" className="demo-link" aria-label="View restaurant demo (coming soon)">
-                      Coming Soon
-                    </a>
+                    <Link href="/demos/restaurant" className="demo-link" aria-label="View restaurant demo" data-testid="restaurant-demo-link">
+                      View Demo
+                    </Link>
                     <span className="demo-note">Hospitality-ready layout</span>
                   </div>
                 </div>
