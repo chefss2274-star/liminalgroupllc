@@ -65,6 +65,14 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
   - AI-generated summary using Claude Sonnet analyzing the audit results
   - Score display with color-coded pass/fail indicators
   - CTA bar linking to pricing section
+  - **Database Storage**: All audits saved to MongoDB with full details
+  - **Email Notifications**: Sends email to hello@liminalgroupllc.com with lead details, score, checklist, and AI summary (requires Resend API key)
+- [x] **Admin Dashboard** at /admin/audits - Lead tracking and follow-up tool
+  - Stats bar showing total audits, high scores (70+), low scores (<40)
+  - Table of all audit submissions with business, contact, website, score, date
+  - Detail panel showing full audit results, checklist, and AI summary
+  - "Email Lead" button to quickly compose follow-up email
+  - "Visit Website" link to open lead's site in new tab
 - [x] Homepage navigation updated to link to /audit instead of #audit section
   - Header "Free Website Audit" CTA → /audit
   - Nav "Audit" link → /audit
@@ -104,7 +112,9 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - `/app/frontend/src/app/why-mobile/layout.tsx` - Why Mobile layout with metadata
 - `/app/frontend/src/app/audit/page.tsx` - AI-powered website audit tool
 - `/app/frontend/src/app/audit/layout.tsx` - Audit page layout with metadata
-- `/app/backend/routes/audit.py` - Backend API for website analysis
+- `/app/frontend/src/app/admin/audits/page.tsx` - Admin dashboard for viewing leads
+- `/app/frontend/src/app/admin/audits/layout.tsx` - Admin layout with metadata
+- `/app/backend/routes/audit.py` - Backend API for website analysis, storage, and email notifications
 - `/app/frontend/.env.local` - Environment variables
 - `/app/frontend/vercel.json` - Vercel config
 - `/app/frontend/README.md` - Documentation
@@ -121,7 +131,8 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 All core requirements delivered
 
 ### P1 - User Action Required
-- [ ] Add Formspree form ID to environment variable
+- [ ] Add Formspree form ID to environment variable (for homepage form)
+- [ ] Add Resend API key to enable email notifications (RESEND_API_KEY in backend .env)
 - [ ] Deploy to Vercel
 - [ ] Replace placeholder contact email (hello@liminalgroupllc.com)
 
