@@ -27,7 +27,7 @@ db = client[db_name]
 # Resend configuration
 resend.api_key = os.environ.get("RESEND_API_KEY", "")
 SENDER_EMAIL = os.environ.get("SENDER_EMAIL", "onboarding@resend.dev")
-NOTIFICATION_EMAIL = "hello@liminalgroupllc.com"
+NOTIFICATION_EMAIL = "admin@liminalgroupllc.com"
 
 router = APIRouter(prefix="/api/audit", tags=["audit"])
 

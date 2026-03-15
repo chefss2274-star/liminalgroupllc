@@ -736,8 +736,8 @@ export default function Home() {
                 >
                   Request Website Audit
                 </Link>
-                <a href="mailto:hello@liminalgroupllc.com" className="btn-cta-secondary" data-testid="cta-email">
-                  hello@liminalgroupllc.com
+                <a href="mailto:admin@liminalgroupllc.com" className="btn-cta-secondary" data-testid="cta-email">
+                  admin@liminalgroupllc.com
                 </a>
               </div>
             </div>
@@ -774,7 +774,7 @@ export default function Home() {
               <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")}>
                 About
               </a>
-              <a href="mailto:hello@liminalgroupllc.com">Contact</a>
+              <a href="mailto:admin@liminalgroupllc.com">Contact</a>
             </nav>
           </div>
           <p className="footer-copy" style={{ textAlign: "center", marginTop: 20 }}>

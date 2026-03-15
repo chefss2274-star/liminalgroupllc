@@ -66,7 +66,7 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
   - Score display with color-coded pass/fail indicators
   - CTA bar linking to pricing section
   - **Database Storage**: All audits saved to MongoDB with full details
-  - **Email Notifications**: Sends email to hello@liminalgroupllc.com with lead details, score, checklist, and AI summary (requires Resend API key)
+  - **Email Notifications**: Sends email to admin@liminalgroupllc.com with lead details, score, checklist, and AI summary (requires Resend API key)
 - [x] **Admin Dashboard** at /admin/audits - Lead tracking and follow-up tool
   - Stats bar showing total audits, high scores (70+), low scores (<40)
   - Table of all audit submissions with business, contact, website, score, date
@@ -134,7 +134,7 @@ All core requirements delivered
 - [ ] Add Formspree form ID to environment variable (for homepage form)
 - [ ] Add Resend API key to enable email notifications (RESEND_API_KEY in backend .env)
 - [ ] Deploy to Vercel
-- [ ] Replace placeholder contact email (hello@liminalgroupllc.com)
+- [ ] Replace placeholder contact email (admin@liminalgroupllc.com)
 
 ### P2 - Future Enhancements
 - [ ] Add analytics (Google Analytics, Vercel Analytics)

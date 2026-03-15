@@ -59,7 +59,7 @@ export default function RootLayout({
               name: "Liminal Group LLC",
               description: "Modern websites and digital strategy for businesses ready to move forward online.",
               url: "https://liminalgroupllc.com",
-              email: "hello@liminalgroupllc.com",
+              email: "admin@liminalgroupllc.com",
               areaServed: {
                 "@type": "State",
                 name: "Indiana",
