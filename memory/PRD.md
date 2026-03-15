@@ -51,6 +51,13 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - [x] Homepage landscaping demo card links to /demos/landscaping
 - [x] Demo page toggle bar CTA links to /#audit
 - [x] **Pricing Section** with 3 tiers (Starter, Growth, Authority) and Care Plan
+- [x] **Why Mobile Matters Page** at /why-mobile - Educational sales page about mobile optimization
+  - Hero section with stats-focused headline
+  - Statistics strip (61% mobile traffic, 53% bounce rate, 74% return rate, 50% online purchases)
+  - Problem cards (text too small, buttons too small, slow load)
+  - Side-by-side phone comparison showing before/after mobile design
+  - What We Fix section with 6 problem/solution cards
+  - CTA section linking to homepage /#audit and /#pricing
 - [x] Mobile optimization features in all pricing tiers:
   - Starter: "Mobile-first, fully responsive" + "Thumb-friendly navigation & tap targets"
   - Growth: "Advanced mobile speed optimization"
@@ -75,6 +82,8 @@ Convert HTML document (liminal_homepage.html) to a full React/Next.js app and de
 - `/app/frontend/src/app/demos/landscaping/layout.tsx` - Landscaping demo layout with fonts
 - `/app/frontend/src/app/demos/plumbing/page.tsx` - Plumbing demo with Before/After toggle
 - `/app/frontend/src/app/demos/plumbing/layout.tsx` - Plumbing demo layout with fonts
+- `/app/frontend/src/app/why-mobile/page.tsx` - Why Mobile Matters educational page
+- `/app/frontend/src/app/why-mobile/layout.tsx` - Why Mobile layout with metadata
 - `/app/frontend/.env.local` - Environment variables
 - `/app/frontend/vercel.json` - Vercel config
 - `/app/frontend/README.md` - Documentation
@@ -105,4 +114,5 @@ All core requirements delivered
 1. Deploy to Vercel via Git push
 2. Configure Formspree form ID in Vercel environment variables
 3. Add real contact information
-4. Create demo websites for portfolio section
+4. Add remaining demo pages (eCommerce, Lead Gen) when HTML files provided
+5. Add link to /why-mobile page from homepage (optional - can be linked from marketing campaigns)
