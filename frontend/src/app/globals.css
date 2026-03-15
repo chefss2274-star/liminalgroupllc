@@ -1467,3 +1467,781 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   .btn-cta-primary, .btn-cta-secondary { width: 100%; text-align: center; }
   .brand-sub { display: none; }
 }
+
+/* ═══════════════════════════════════════════
+   WHY MOBILE PAGE STYLES
+═══════════════════════════════════════════ */
+
+/* Container for why-mobile page */
+.wm-container {
+  width: min(calc(100% - 48px), 1140px);
+  margin: 0 auto;
+}
+
+/* Hero Section for Why Mobile */
+.wm-hero {
+  padding: 100px 48px 80px;
+  text-align: center;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.wm-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.wm-hero .highlight {
+  color: #c0392b;
+}
+
+.wm-hero .hero-desc {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.wm-hero .hero-actions {
+  justify-content: center;
+}
+
+/* Button variations for why-mobile */
+.btn-dark {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.btn-dark:hover {
+  background: var(--accent-warm);
+  border-color: var(--accent-warm);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.12);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line);
+}
+
+.btn-outline:hover {
+  border-color: var(--text);
+}
+
+/* Stats Strip */
+.stats-strip {
+  background: var(--text);
+  padding: 48px;
+}
+
+.stats-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.stat-card {
+  text-align: center;
+}
+
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  color: #fff;
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-num .pct {
+  font-size: 0.6em;
+  color: rgba(255,255,255,0.4);
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  display: block;
+}
+
+.stat-desc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  margin-top: 6px;
+  line-height: 1.5;
+  display: block;
+}
+
+/* Why Mobile Problem Section */
+.wm-problem-section {
+  padding: 80px 48px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.wm-problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.wm-problem-card {
+  background: var(--surface);
+  border: 1px solid var(--line-light);
+  border-radius: 16px;
+  padding: 28px 24px;
+}
+
+.problem-icon {
+  font-size: 1.8rem;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.wm-problem-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.wm-problem-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.wm-problem-card .cost {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: #c0392b;
+  margin-top: 12px;
+  display: block;
+}
+
+/* Phone Comparison Section */
+.comparison-section {
+  background: var(--text);
+  padding: 80px 48px;
+}
+
+.comparison-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.comparison-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.phone-row {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.phone-col {
+  text-align: center;
+}
+
+.phone-col-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.label-before {
+  color: #c0392b;
+  background: rgba(192,57,43,0.1);
+  border: 1px solid rgba(192,57,43,0.2);
+}
+
+.label-after {
+  color: #27ae60;
+  background: rgba(39,174,96,0.1);
+  border: 1px solid rgba(39,174,96,0.2);
+}
+
+.phone-frame {
+  width: 280px;
+  height: 560px;
+  border-radius: 36px;
+  border: 3px solid #444;
+  background: #111;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 0 0 2px #222;
+}
+
+.phone-notch {
+  width: 120px;
+  height: 24px;
+  background: #111;
+  border-radius: 0 0 16px 16px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.phone-screen::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Bad Mobile Experience (Before) */
+.bad-mobile {
+  background: #1a0a00;
+  color: #c4a87a;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.bad-mobile .bm-header {
+  background: #2a0e00;
+  padding: 8px;
+  text-align: center;
+  border-bottom: 2px solid #8b6914;
+}
+
+.bad-mobile .bm-logo {
+  font-size: 18px;
+  color: #d4a439;
+  font-weight: 700;
+}
+
+.bad-mobile .bm-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  background: #3a1a00;
+  padding: 4px;
+}
+
+.bad-mobile .bm-nav a {
+  color: #d4a439;
+  font-size: 8px;
+  padding: 5px 6px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(139,105,20,0.2);
+  text-transform: uppercase;
+}
+
+.bad-mobile .bm-hero {
+  background: linear-gradient(180deg, #2a1000, #1a0800);
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.bad-mobile .bm-hero h2 {
+  font-size: 16px;
+  color: #d4a439;
+  margin-bottom: 6px;
+}
+
+.bad-mobile .bm-hero p {
+  font-size: 10px;
+  color: #8a7050;
+}
+
+.bad-mobile .bm-body {
+  padding: 12px 10px;
+}
+
+.bad-mobile .bm-body h3 {
+  font-size: 13px;
+  color: #d4a439;
+  margin: 12px 0 6px;
+  border-bottom: 1px dashed #5a3000;
+  padding-bottom: 4px;
+}
+
+.bad-mobile .bm-body p {
+  font-size: 10px;
+  color: #8a7050;
+  margin-bottom: 8px;
+}
+
+.bad-mobile .bm-btn {
+  display: block;
+  background: #cc0000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  margin: 12px 0;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.bad-mobile .bm-sidebar {
+  background: #2a0e00;
+  border: 1px solid #5a3000;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.bad-mobile .bm-sidebar h4 {
+  font-size: 11px;
+  color: #d4a439;
+  margin-bottom: 4px;
+}
+
+.bad-mobile .bm-sidebar p {
+  font-size: 9px;
+  color: #7a5a40;
+}
+
+.bad-mobile .bm-tiny {
+  font-size: 7px;
+  color: #4a3020;
+  text-align: center;
+  padding: 8px;
+}
+
+/* Good Mobile Experience (After) */
+.good-mobile {
+  background: #faf8f5;
+  color: #2a2520;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.good-mobile .gm-header {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e8e2da;
+  position: sticky;
+  top: 0;
+  background: rgba(250,248,245,0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 5;
+}
+
+.good-mobile .gm-logo {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #2a2520;
+}
+
+.good-mobile .gm-btn {
+  background: #2a2520;
+  color: #faf8f5;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.good-mobile .gm-hero {
+  background: linear-gradient(180deg, rgba(42,37,32,0.3), rgba(42,37,32,0.8)),
+    url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&q=60') center/cover;
+  padding: 48px 16px 32px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.good-mobile .gm-hero-eyebrow {
+  font-size: 8px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(250,248,245,0.5);
+  margin-bottom: 8px;
+}
+
+.good-mobile .gm-hero h1 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  color: #faf8f5;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.good-mobile .gm-hero p {
+  font-size: 11px;
+  color: rgba(250,248,245,0.6);
+  margin-bottom: 14px;
+}
+
+.good-mobile .gm-hero-btn {
+  display: inline-block;
+  background: #faf8f5;
+  color: #2a2520;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.good-mobile .gm-section {
+  padding: 24px 16px;
+}
+
+.good-mobile .gm-section-label {
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8a7a6a;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.good-mobile .gm-section h2 {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: #2a2520;
+  margin-bottom: 6px;
+}
+
+.good-mobile .gm-section p {
+  font-size: 11px;
+  color: #6a6058;
+}
+
+.good-mobile .gm-card {
+  background: #f0ebe4;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 12px;
+}
+
+.good-mobile .gm-card h3 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.good-mobile .gm-card p {
+  font-size: 10px;
+  color: #6a6058;
+}
+
+.good-mobile .gm-cta {
+  background: #2a2520;
+  padding: 24px 16px;
+  margin: 16px;
+  border-radius: 12px;
+  text-align: center;
+}
+
+.good-mobile .gm-cta h3 {
+  font-family: var(--font-display);
+  font-size: 16px;
+  color: #faf8f5;
+  margin-bottom: 6px;
+}
+
+.good-mobile .gm-cta p {
+  font-size: 10px;
+  color: rgba(250,248,245,0.5);
+  margin-bottom: 12px;
+}
+
+.good-mobile .gm-cta-btn {
+  display: inline-block;
+  background: #faf8f5;
+  color: #2a2520;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Annotations between phones */
+.phone-annotations {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-self: center;
+  max-width: 200px;
+}
+
+.annotation {
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.annotation .ann-icon {
+  font-size: 1.4rem;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.annotation .ann-text {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.4;
+}
+
+.annotation .ann-text strong {
+  color: #fff;
+}
+
+/* What Changes Section */
+.changes-section {
+  padding: 80px 48px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.changes-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.change-card {
+  background: var(--surface);
+  border: 1px solid var(--line-light);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.change-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+}
+
+.change-icon.bad {
+  background: rgba(192,57,43,0.08);
+  color: #c0392b;
+}
+
+.change-icon.good {
+  background: rgba(39,174,96,0.08);
+  color: #27ae60;
+}
+
+.change-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.change-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Why Mobile CTA Section */
+.wm-cta-section {
+  padding: 80px 48px;
+}
+
+.wm-cta-box {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: var(--text);
+  border-radius: 20px;
+  padding: 56px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+.wm-cta-box h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.wm-cta-box p {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+.btn-cta-light {
+  padding: 15px 28px;
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s var(--ease);
+  display: inline-block;
+}
+
+.btn-cta-light:hover {
+  background: var(--accent-warm);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-cta-ghost {
+  padding: 15px 28px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s var(--ease);
+  display: inline-block;
+}
+
+.btn-cta-ghost:hover {
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Why Mobile Footer */
+.wm-site-footer {
+  border-top: 1px solid var(--line-light);
+  padding: 28px 48px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+/* ═══════════════════════════════════════════
+   WHY MOBILE RESPONSIVE
+═══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .wm-problem-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .phone-row {
+    gap: 32px;
+  }
+
+  .phone-annotations {
+    display: none;
+  }
+
+  .changes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-cta-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 44px 28px;
+  }
+
+  .wm-cta-box .cta-actions {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .wm-hero,
+  .wm-problem-section,
+  .comparison-section,
+  .changes-section,
+  .wm-cta-section {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .stats-strip {
+    padding: 32px 24px;
+  }
+
+  .wm-hero {
+    padding-top: 72px;
+  }
+
+  .phone-frame {
+    width: 240px;
+    height: 480px;
+  }
+
+  .wm-site-footer {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wm-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .wm-hero .hero-actions {
+    flex-direction: column;
+  }
+
+  .wm-hero .btn {
+    width: 100%;
+  }
+
+  .stats-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .wm-cta-box .cta-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-cta-light,
+  .btn-cta-ghost {
+    width: 100%;
+    text-align: center;
+  }
+}
+
