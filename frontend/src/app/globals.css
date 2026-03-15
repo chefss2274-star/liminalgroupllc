@@ -3270,7 +3270,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .mobile-stat-number {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4vw, 3.2rem);
-  color: var(--warm-mid);
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -3286,7 +3286,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .mobile-stat-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.65);
+  color: rgba(255, 255, 255, 0.45);
   line-height: 1.5;
 }
 
