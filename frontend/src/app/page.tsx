@@ -524,7 +524,7 @@ export default function Home() {
             <div className="pricing-grid">
               {/* Starter */}
               <div className="pricing-card reveal" data-testid="pricing-card-starter">
-                <div className="pricing-tier">Starter</div>
+                <div className="pricing-tier">Modern Foundation</div>
                 <h3>Modern Foundation</h3>
                 <div className="pricing-amount">
                   <span className="pricing-dollar">$1,297</span>
@@ -551,18 +551,20 @@ export default function Home() {
                   <li>Launch-ready in 2–3 weeks</li>
                 </ul>
 
-                <Link
-                  href="/audit"
+                <a
+                  href="https://buy.stripe.com/4gM9AUehF1CqdhD6ue0kE00"
                   className="pricing-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Start with an Audit
-                </Link>
+                  Get Started — $597 Deposit
+                </a>
               </div>
 
               {/* Growth (Featured) */}
               <div className="pricing-card featured reveal reveal-delay-1" data-testid="pricing-card-growth">
                 <div className="pricing-badge">Most Popular</div>
-                <div className="pricing-tier">Growth</div>
+                <div className="pricing-tier">Built to Convert</div>
                 <h3>Built to Convert</h3>
                 <div className="pricing-amount">
                   <span className="pricing-dollar">$1,897</span>
@@ -590,17 +592,19 @@ export default function Home() {
                   <li>Launch-ready in 2–4 weeks</li>
                 </ul>
 
-                <Link
-                  href="/audit"
+                <a
+                  href="https://buy.stripe.com/3cI9AUc9xepc3H3g4O0kE03"
                   className="pricing-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Start with an Audit
-                </Link>
+                  Get Started — $897 Deposit
+                </a>
               </div>
 
               {/* Authority */}
               <div className="pricing-card reveal reveal-delay-2" data-testid="pricing-card-authority">
-                <div className="pricing-tier">Authority</div>
+                <div className="pricing-tier">Full Digital Presence</div>
                 <h3>Full Digital Presence</h3>
                 <div className="pricing-amount">
                   <span className="pricing-dollar">$2,897</span>
@@ -628,12 +632,14 @@ export default function Home() {
                   <li>Priority support &amp; faster delivery</li>
                 </ul>
 
-                <Link
-                  href="/audit"
+                <a
+                  href="https://buy.stripe.com/8x26oIddBch45Pb05Q0kE05"
                   className="pricing-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Start with an Audit
-                </Link>
+                  Get Started — $1,297 Deposit
+                </a>
               </div>
             </div>
 
@@ -650,6 +656,24 @@ export default function Home() {
                 <span className="care-plan-amount">$127</span>
                 <span className="care-plan-period">per month</span>
                 <span className="care-plan-annual">or $1,147/year (save 25%)</span>
+              </div>
+              <div className="care-plan-actions">
+                <a
+                  href="https://buy.stripe.com/3cI8wQ4H55SG4L76ue0kE07"
+                  className="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start Monthly — $127/mo
+                </a>
+                <a
+                  href="https://buy.stripe.com/6oUbJ2c9xepcb9v6ue0kE01"
+                  className="btn btn-secondary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Start Annual — $1,147/yr
+                </a>
               </div>
             </div>
           </div>
