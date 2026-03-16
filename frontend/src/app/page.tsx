@@ -190,14 +190,15 @@ export default function Home() {
             <div className="hero-left">
               <div className="hero-eyebrow reveal">LIMINAL GROUP LLC</div>
               <h1 className="reveal reveal-delay-1">
-                Your Digital Presence,<br />Rebuilt.
+                Cross the Threshold.
               </h1>
               <p className="hero-desc reveal reveal-delay-2">
-                Liminal Group transforms outdated websites into conversion-ready experiences. Design, rebuild, launch.
+                Your digital presence, rebuilt. Liminal Group designs conversion-ready websites for businesses ready to move forward.
               </p>
             </div>
             <div className="hero-mobile-divider" aria-hidden="true" />
             <div className="hero-right reveal reveal-delay-3">
+              <p style={{color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px'}}>Ready to begin?</p>
               <Link href="/audit" className="hero-btn-gold" data-testid="hero-cta-primary">
                 Start a Project →
               </Link>
@@ -560,7 +561,7 @@ export default function Home() {
 
             <div className="demo-grid">
               {/* Demo Card 1 - Roofing */}
-              <article className="demo-card reveal" data-testid="demo-card-roofing">
+              <Link href="/demos/roofing" className="demo-card reveal" data-testid="demo-card-roofing" style={{display: 'block', cursor: 'pointer'}}>
                 <div className="demo-visual">
                   <div className="demo-image-wrap">
                     <img
@@ -580,16 +581,14 @@ export default function Home() {
                     capture.
                   </p>
                   <div className="demo-footer">
-                    <Link href="/demos/roofing" className="demo-link" aria-label="View roofing demo" data-testid="roofing-demo-link">
-                      View Demo
-                    </Link>
+                    <span className="demo-link" aria-label="View roofing demo">View Demo</span>
                     <span className="demo-note">Lead-focused structure</span>
                   </div>
                 </div>
-              </article>
+              </Link>
 
               {/* Demo Card 2 - Plumbing */}
-              <article className="demo-card reveal reveal-delay-1" data-testid="demo-card-plumbing">
+              <Link href="/demos/plumbing" className="demo-card reveal reveal-delay-1" data-testid="demo-card-plumbing" style={{display: 'block', cursor: 'pointer'}}>
                 <div className="demo-visual">
                   <div className="demo-image-wrap">
                     <img
@@ -609,16 +608,14 @@ export default function Home() {
                     clearer CTA path.
                   </p>
                   <div className="demo-footer">
-                    <Link href="/demos/plumbing" className="demo-link" aria-label="View plumbing demo" data-testid="plumbing-demo-link">
-                      View Demo
-                    </Link>
+                    <span className="demo-link" aria-label="View plumbing demo">View Demo</span>
                     <span className="demo-note">Built for calls &amp; quotes</span>
                   </div>
                 </div>
-              </article>
+              </Link>
 
               {/* Demo Card 3 - Landscaping */}
-              <article className="demo-card reveal reveal-delay-2" data-testid="demo-card-landscaping">
+              <Link href="/demos/landscaping" className="demo-card reveal reveal-delay-2" data-testid="demo-card-landscaping" style={{display: 'block', cursor: 'pointer'}}>
                 <div className="demo-visual">
                   <div className="demo-image-wrap">
                     <img
@@ -638,16 +635,14 @@ export default function Home() {
                     discovery.
                   </p>
                   <div className="demo-footer">
-                    <Link href="/demos/landscaping" className="demo-link" aria-label="View landscaping demo" data-testid="landscaping-demo-link">
-                      View Demo
-                    </Link>
+                    <span className="demo-link" aria-label="View landscaping demo">View Demo</span>
                     <span className="demo-note">Strong visual trust signals</span>
                   </div>
                 </div>
-              </article>
+              </Link>
 
               {/* Demo Card 4 - Restaurant */}
-              <article className="demo-card reveal reveal-delay-3" data-testid="demo-card-restaurant">
+              <Link href="/demos/restaurant" className="demo-card reveal reveal-delay-3" data-testid="demo-card-restaurant" style={{display: 'block', cursor: 'pointer'}}>
                 <div className="demo-visual">
                   <div className="demo-image-wrap">
                     <img
@@ -667,13 +662,11 @@ export default function Home() {
                     customer engagement.
                   </p>
                   <div className="demo-footer">
-                    <Link href="/demos/restaurant" className="demo-link" aria-label="View restaurant demo" data-testid="restaurant-demo-link">
-                      View Demo
-                    </Link>
+                    <span className="demo-link" aria-label="View restaurant demo">View Demo</span>
                     <span className="demo-note">Hospitality-ready layout</span>
                   </div>
                 </div>
-              </article>
+              </Link>
             </div>
           </div>
         </section>

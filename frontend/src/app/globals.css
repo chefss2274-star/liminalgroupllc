@@ -366,6 +366,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .hero-left {
   flex: 1;
   padding-right: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-right {
