@@ -177,9 +177,9 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1636955816868-fcb881e57954?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
 
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg, rgba(26,21,16,0.75) 0%, rgba(26,21,16,0.85) 100%)',zIndex:1}} />
+          <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg, rgba(20,16,12,0.7) 0%, rgba(20,16,12,0.8) 100%)',zIndex:1}} />
 
           <div className="container hero-content" style={{position:'relative',zIndex:2}}>
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
