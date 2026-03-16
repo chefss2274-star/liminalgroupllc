@@ -177,9 +177,11 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{background: 'linear-gradient(160deg, #5a4030 0%, #4a3525 15%, #3d2a1c 35%, #2d1f14 55%, #3d2a1c 75%, #5a4030 100%)', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1636955816868-fcb881e57954?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
 
-          <div className="container hero-content">
+          <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg, rgba(26,21,16,0.75) 0%, rgba(26,21,16,0.85) 100%)',zIndex:1}} />
+
+          <div className="container hero-content" style={{position:'relative',zIndex:2}}>
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
             <h1 className="reveal reveal-delay-1">
               Cross the
