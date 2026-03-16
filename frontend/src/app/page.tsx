@@ -177,6 +177,12 @@ export default function Home() {
       <main id="main" data-testid="main-content">
         {/* Hero */}
         <section className="hero" id="top" data-testid="hero-section">
+          {/* Floating ambient orbs */}
+          <div className="hero-orb hero-orb-1" aria-hidden="true" />
+          <div className="hero-orb hero-orb-2" aria-hidden="true" />
+          <div className="hero-orb hero-orb-3" aria-hidden="true" />
+          <div className="hero-orb hero-orb-4" aria-hidden="true" />
+
           <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
             <h1 className="reveal reveal-delay-1">
