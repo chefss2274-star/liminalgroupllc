@@ -498,7 +498,7 @@ export default function Home() {
 
               {/* See what they experience link */}
               <div style={{ textAlign: "center", marginTop: "2rem" }}>
-                <Link href="/why-mobile" className="mobile-stats-link">
+                <Link href="/why-mobile" className="btn btn-primary">
                   See what they experience →
                 </Link>
               </div>
