@@ -178,37 +178,38 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{background: '#4a3f38', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
-
-          <div className="container hero-content">
-            <hr className="hero-rule" aria-hidden="true" />
-            <div className="hero-eyebrow reveal">Liminal Group LLC</div>
-            <h1 className="reveal reveal-delay-1">
-              Cross the
-              <br />
-              Threshold
-            </h1>
-            <p className="hero-desc reveal reveal-delay-2">
-              Modern websites that help businesses move into their next stage online. We combine strategic
-              thinking, clean design, and emerging tools to turn outdated sites into platforms that generate
-              real customers.
-            </p>
-            <div className="hero-actions reveal reveal-delay-3">
-              <Link href="/audit" className="btn btn-primary" data-testid="hero-cta-primary">
-                Get Your Free Audit
+        <section className="hero" id="top" data-testid="hero-section">
+          <div className="hero-grain" aria-hidden="true" />
+          <div className="hero-line-glow" aria-hidden="true" />
+          <div className="hero-vline" aria-hidden="true" />
+          <div className="hero-scroll" aria-hidden="true">
+            <span className="hero-scroll-line" />
+            <span className="hero-scroll-text">Scroll</span>
+          </div>
+          <div className="hero-inner">
+            <div className="hero-left">
+              <div className="hero-eyebrow reveal">LIMINAL GROUP LLC</div>
+              <h1 className="reveal reveal-delay-1">
+                Your Digital Presence,<br />Rebuilt.
+              </h1>
+              <p className="hero-desc reveal reveal-delay-2">
+                Liminal Group transforms outdated websites into conversion-ready experiences. Design, rebuild, launch.
+              </p>
+            </div>
+            <div className="hero-mobile-divider" aria-hidden="true" />
+            <div className="hero-right reveal reveal-delay-3">
+              <Link href="/audit" className="hero-btn-gold" data-testid="hero-cta-primary">
+                Start a Project →
               </Link>
               <a
                 href="#demos"
-                className="btn btn-secondary"
+                className="hero-btn-ghost"
                 onClick={(e) => handleAnchorClick(e, "#demos")}
                 data-testid="hero-cta-secondary"
               >
-                View Demo Websites
+                See Our Work →
               </a>
             </div>
-            <p className="hero-tagline reveal reveal-delay-4">
-              Helping businesses cross the threshold into modern digital presence
-            </p>
           </div>
         </section>
 
