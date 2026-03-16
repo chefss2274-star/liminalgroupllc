@@ -3308,7 +3308,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* ── Phone Mockup Comparison ──────────────────────────────────────────────── */
 
 .phone-comparison {
-  max-width: 600px;
+  max-width: 640px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3316,7 +3316,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .phone-comparison-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: start;
   justify-items: center;
 }
@@ -3349,25 +3349,31 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   border: 1px solid rgba(34, 197, 94, 0.3);
 }
 
-.phone-frame {
-  width: 140px;
+/* Base phone-frame styles for comparison mockups */
+.phone-frame-comparison {
+  width: 175px;
+  max-height: 480px;
   border: 3px solid #2a2a2a;
-  border-radius: 24px;
+  border-radius: 28px;
   background: #111;
-  padding: 10px 5px 8px;
-  box-shadow: 0 0 0 1px rgba(255,255,255,0.06), 0 20px 40px rgba(0,0,0,0.5);
+  padding: 10px 5px 10px;
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.07),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 24px 48px rgba(0, 0, 0, 0.6);
   position: relative;
   overflow: hidden;
 }
 
 .phone-notch {
-  width: 40px;
-  height: 8px;
+  width: 44px;
+  height: 9px;
   background: #111;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 10px 10px;
   margin: 0 auto 6px;
   position: relative;
   z-index: 2;
+  flex-shrink: 0;
 }
 
 .phone-notch::before {
@@ -3379,21 +3385,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #222;
+  background: #1e1e1e;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
 }
 
 .phone-screen {
-  border-radius: 10px;
+  border-radius: 8px;
   overflow: hidden;
-  min-height: 220px;
 }
 
 .phone-screen-before {
-  background: #ffffff;
+  background: #1a0a00;
 }
 
 .phone-screen-after {
-  background: #f8f6f2;
+  background: #f5f0e8;
 }
 
 .phone-screen-inner {
@@ -3401,14 +3407,24 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   flex-direction: column;
 }
 
-@media (max-width: 600px) {
+/* Blinking animation for the bad "before" site */
+@keyframes bellas-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.bellas-blink {
+  animation: bellas-blink 1s step-end infinite;
+}
+
+@media (max-width: 640px) {
   .phone-comparison-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
 
-  .phone-frame {
-    width: 160px;
+  .phone-frame-comparison {
+    width: 190px;
   }
 }
 
