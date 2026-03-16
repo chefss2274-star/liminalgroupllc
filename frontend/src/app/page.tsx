@@ -300,7 +300,7 @@ export default function Home() {
         <section className="mobile-stats-section" data-testid="mobile-stats-section">
           <div className="container">
             <div className="mobile-stats-header reveal">
-              <div className="section-label" style={{ color: "rgba(255,255,255,0.6)", borderColor: "rgba(255,255,255,0.2)" }}>Why Mobile Matters</div>
+              <div className="section-label" style={{ color: "rgba(255,255,255,0.75)", borderColor: "rgba(255,255,255,0.25)" }}>Why Mobile Matters</div>
               <h2 className="mobile-stats-headline">Your Customers Are on Their Phones</h2>
             </div>
             <div className="mobile-stats-grid">
@@ -383,10 +383,43 @@ export default function Home() {
                           </div>
                         </div>
 
-                        {/* Visitor counter footer */}
-                        <div style={{ background: "#2a0e00", padding: "4px 5px", textAlign: "center", borderTop: "1px solid #6b3a10" }}>
-                          <div style={{ fontSize: "5px", color: "#9a7020" }}>You are visitor #14,832</div>
-                          <div style={{ fontSize: "4.5px", color: "#7a5518", marginTop: "1px" }}>© 1987–2009 Bella&apos;s Italian Kitchen. All rights reserved.</div>
+                        {/* Daily Specials box */}
+                        <div style={{ background: "#3a1a00", padding: "4px 5px", borderTop: "1px solid #6b3a10" }}>
+                          <div style={{ border: "1px dashed #d4a439", padding: "3px 4px" }}>
+                            <div style={{ fontSize: "6px", color: "#d4a439", fontWeight: "bold", textAlign: "center", marginBottom: "2px" }}>✦ DAILY SPECIALS ✦</div>
+                            {[
+                              "Monday: Pasta Night $12.99",
+                              "Tuesday: 20% Off Pasta",
+                              "Wednesday: BOGO Wine",
+                              "Thursday: Family Platter $39.99",
+                            ].map((s) => (
+                              <div key={s} style={{ fontSize: "5px", color: "#c4a87a", lineHeight: 1.6 }}>• {s}</div>
+                            ))}
+                          </div>
+                        </div>
+
+                        {/* Menu list */}
+                        <div style={{ background: "#2a0e00", padding: "4px 5px", borderTop: "1px solid #6b3a10" }}>
+                          <div style={{ fontSize: "6px", color: "#d4a439", fontWeight: "bold", marginBottom: "2px" }}>OUR MENU</div>
+                          {[
+                            ["Fettuccine Alfredo", "$16.99"],
+                            ["Chicken Parm", "$18.99"],
+                            ["Lasagna", "$17.99"],
+                            ["Pizza", "$14.99"],
+                          ].map(([name, price]) => (
+                            <div key={name} style={{ display: "flex", justifyContent: "space-between", fontSize: "5px", color: "#c4a87a", lineHeight: 1.7, borderBottom: "1px dotted #6b3a10" }}>
+                              <span>{name}</span>
+                              <span style={{ color: "#d4a439" }}>{price}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                        {/* Facebook + footer */}
+                        <div style={{ background: "#3a1a00", padding: "3px 5px", borderTop: "1px solid #6b3a10", textAlign: "center" }}>
+                          <div style={{ fontSize: "5.5px", color: "#4a7bc4", marginBottom: "2px" }}>👍 Find Us On Facebook!</div>
+                          <div style={{ fontSize: "5px", color: "#9a7020", fontStyle: "italic" }}>You are visitor #14,832</div>
+                          <div style={{ fontSize: "4.5px", color: "#7a5518", marginTop: "1px" }}>Website by Mike&apos;s Web Design</div>
+                          <div style={{ fontSize: "4px", color: "#5a3c10", marginTop: "1px" }}>© 1987–2009 Bella&apos;s Italian Kitchen. All rights reserved.</div>
                         </div>
 
                       </div>

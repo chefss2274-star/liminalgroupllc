@@ -3279,13 +3279,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.55);
   margin-bottom: 10px;
 }
 
 .mobile-stat-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.4);
   line-height: 1.5;
 }
 
