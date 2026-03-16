@@ -177,7 +177,7 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{background: 'linear-gradient(135deg, #7c6955 0%, #2a1f18 50%, #0f0e0c 100%)', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{background: 'radial-gradient(ellipse at 20% 30%, #3d2e1f 0%, transparent 55%), radial-gradient(ellipse at 80% 70%, #2a1f15 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, #1a1610 0%, #0f0e0c 100%)', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
 
           <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
@@ -204,7 +204,7 @@ export default function Home() {
                 View Demo Websites
               </a>
             </div>
-            <p className="hero-tagline reveal reveal-delay-4">
+            <p className="hero-tagline reveal reveal-delay-4" style={{fontSize: '1.1rem', fontStyle: 'normal', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 500}}>
               Helping businesses cross the threshold into modern digital presence
             </p>
           </div>
