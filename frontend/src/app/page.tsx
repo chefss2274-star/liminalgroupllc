@@ -115,14 +115,8 @@ export default function Home() {
             <Link href="/audit" data-testid="nav-audit">
               Audit
             </Link>
-            <a href="#about" onClick={(e) => handleAnchorClick(e, "#about")} data-testid="nav-about">
-              About
-            </a>
             <Link href="/why-mobile" data-testid="nav-why-mobile">
               Why Mobile
-            </Link>
-            <Link href="/start-here" data-testid="nav-start-here" style={{color: '#c9a84c'}}>
-              Start Here
             </Link>
           </nav>
 
@@ -167,14 +161,8 @@ export default function Home() {
         <Link href="/audit" className="mobile-nav-link">
           Website Audit
         </Link>
-        <a href="#about" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#about")}>
-          About
-        </a>
         <Link href="/why-mobile" className="mobile-nav-link">
           Why Mobile
-        </Link>
-        <Link href="/start-here" className="mobile-nav-link" style={{color: '#c9a84c'}}>
-          Start Here
         </Link>
         <a href="#contact" className="mobile-nav-link" onClick={(e) => handleAnchorClick(e, "#contact")}>
           Contact
