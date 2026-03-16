@@ -300,10 +300,8 @@ export default function Home() {
         <section className="mobile-stats-section" data-testid="mobile-stats-section">
           <div className="container">
             <div className="mobile-stats-header reveal">
+              <div className="section-label" style={{ color: "rgba(255,255,255,0.6)", borderColor: "rgba(255,255,255,0.2)" }}>Why Mobile Matters</div>
               <h2 className="mobile-stats-headline">Your Customers Are on Their Phones</h2>
-              <Link href="/why-mobile" className="mobile-stats-link">
-                See what they experience →
-              </Link>
             </div>
             <div className="mobile-stats-grid">
               <div className="mobile-stat reveal">
@@ -325,6 +323,107 @@ export default function Home() {
                 <div className="mobile-stat-number">50%</div>
                 <div className="mobile-stat-label">Online Purchases</div>
                 <div className="mobile-stat-desc">of all e-commerce sales happen on mobile</div>
+              </div>
+            </div>
+
+            {/* Before/After Phone Mockup Comparison */}
+            <div className="phone-comparison reveal" style={{ marginTop: "3rem" }}>
+              <div className="phone-comparison-grid">
+                {/* Before Phone */}
+                <div className="phone-mockup-wrapper">
+                  <div className="phone-badge phone-badge-before">Before</div>
+                  <div className="phone-frame">
+                    <div className="phone-notch" />
+                    <div className="phone-screen phone-screen-before">
+                      <div className="phone-screen-inner">
+                        {/* Bad nav */}
+                        <div style={{ display: "flex", flexWrap: "wrap", gap: "2px", padding: "6px 4px", borderBottom: "1px solid #ccc", background: "#f0f0f0" }}>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>Home</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>About Us</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>Services</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>Portfolio</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>Contact</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>Blog</span>
+                          <span style={{ fontSize: "7px", color: "#333", whiteSpace: "nowrap" }}>FAQ</span>
+                        </div>
+                        {/* Wall of text */}
+                        <div style={{ padding: "6px 5px" }}>
+                          <div style={{ fontSize: "8px", fontWeight: "bold", color: "#111", lineHeight: 1.2, marginBottom: "4px" }}>Welcome to Our Business Website! We Offer Many Great Services for You</div>
+                          <div style={{ fontSize: "6px", color: "#555", lineHeight: 1.4, marginBottom: "4px" }}>
+                            Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation ullamco.
+                          </div>
+                          <div style={{ fontSize: "6px", color: "#555", lineHeight: 1.4, marginBottom: "4px" }}>
+                            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident sunt in culpa qui officia.
+                          </div>
+                          <div style={{ fontSize: "6px", color: "#777", lineHeight: 1.4, marginBottom: "4px" }}>
+                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi.
+                          </div>
+                          <div style={{ display: "flex", flexWrap: "wrap", gap: "2px", marginTop: "4px" }}>
+                            <div style={{ fontSize: "6px", background: "#ddd", padding: "2px 3px", borderRadius: "2px", color: "#333" }}>Learn More</div>
+                            <div style={{ fontSize: "6px", background: "#ddd", padding: "2px 3px", borderRadius: "2px", color: "#333" }}>Click Here</div>
+                            <div style={{ fontSize: "6px", background: "#ddd", padding: "2px 3px", borderRadius: "2px", color: "#333" }}>Read More</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* After Phone */}
+                <div className="phone-mockup-wrapper">
+                  <div className="phone-badge phone-badge-after">After</div>
+                  <div className="phone-frame">
+                    <div className="phone-notch" />
+                    <div className="phone-screen phone-screen-after">
+                      <div className="phone-screen-inner">
+                        {/* Clean header */}
+                        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "6px 8px", background: "#1a1a2e" }}>
+                          <span style={{ fontSize: "8px", fontWeight: "bold", color: "#fff", letterSpacing: "0.5px" }}>Bistro&nbsp;Co.</span>
+                          <div style={{ fontSize: "7px", background: "#c8a96e", color: "#1a1a2e", padding: "3px 6px", borderRadius: "8px", fontWeight: "bold" }}>Reserve</div>
+                        </div>
+                        {/* Hero image area */}
+                        <div style={{ height: "40px", background: "linear-gradient(135deg, #2c3e50, #4a6741)", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                          <span style={{ fontSize: "7px", color: "rgba(255,255,255,0.6)", letterSpacing: "1px", textTransform: "uppercase" }}>Fine Dining</span>
+                        </div>
+                        {/* Readable headline */}
+                        <div style={{ padding: "8px 8px 4px" }}>
+                          <div style={{ fontSize: "9px", fontWeight: "bold", color: "#1a1a2e", lineHeight: 1.3, marginBottom: "3px" }}>Fresh Ingredients,<br />Unforgettable Meals</div>
+                          <div style={{ fontSize: "6.5px", color: "#666", lineHeight: 1.5 }}>Open daily · Downtown location</div>
+                        </div>
+                        {/* Clean menu cards */}
+                        <div style={{ padding: "4px 8px", display: "flex", flexDirection: "column", gap: "4px" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "5px", background: "#f8f6f2", borderRadius: "5px", padding: "4px 5px" }}>
+                            <div style={{ width: "18px", height: "18px", background: "#e8dcc8", borderRadius: "3px", flexShrink: 0 }} />
+                            <div>
+                              <div style={{ fontSize: "7px", fontWeight: "bold", color: "#1a1a2e" }}>Dinner Menu</div>
+                              <div style={{ fontSize: "6px", color: "#888" }}>Seasonal favorites</div>
+                            </div>
+                          </div>
+                          <div style={{ display: "flex", alignItems: "center", gap: "5px", background: "#f8f6f2", borderRadius: "5px", padding: "4px 5px" }}>
+                            <div style={{ width: "18px", height: "18px", background: "#e8dcc8", borderRadius: "3px", flexShrink: 0 }} />
+                            <div>
+                              <div style={{ fontSize: "7px", fontWeight: "bold", color: "#1a1a2e" }}>Happy Hour</div>
+                              <div style={{ fontSize: "6px", color: "#888" }}>3pm – 6pm daily</div>
+                            </div>
+                          </div>
+                        </div>
+                        {/* Prominent CTA */}
+                        <div style={{ padding: "6px 8px" }}>
+                          <div style={{ fontSize: "8px", background: "#c8a96e", color: "#1a1a2e", textAlign: "center", padding: "5px", borderRadius: "6px", fontWeight: "bold" }}>
+                            Book a Table →
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* See what they experience link */}
+              <div style={{ textAlign: "center", marginTop: "2rem" }}>
+                <Link href="/why-mobile" className="mobile-stats-link">
+                  See what they experience →
+                </Link>
               </div>
             </div>
           </div>
