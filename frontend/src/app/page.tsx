@@ -198,7 +198,9 @@ export default function Home() {
             </div>
             <div className="hero-mobile-divider" aria-hidden="true" />
             <div className="hero-right reveal reveal-delay-3">
-              <p style={{color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', letterSpacing: '0.15em', textTransform: 'uppercase', marginBottom: '20px'}}>Ready to begin?</p>
+              <span style={{display: 'block', width: '40px', height: '1px', background: '#c9a84c', marginBottom: '20px'}} aria-hidden="true" />
+              <p style={{color: 'rgba(255,255,255,0.75)', fontSize: '1.1rem', letterSpacing: '0.2em', fontWeight: 500, textTransform: 'uppercase', marginBottom: '28px'}}>Ready to begin?</p>
+              <p style={{color: 'rgba(255,255,255,0.35)', fontSize: '0.8rem', letterSpacing: '0.05em', marginBottom: '28px'}}>Most projects launch in under 2 weeks.</p>
               <Link href="/audit" className="hero-btn-gold" data-testid="hero-cta-primary">
                 Start a Project →
               </Link>
