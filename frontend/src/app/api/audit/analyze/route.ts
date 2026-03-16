@@ -210,8 +210,9 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
 
   try {
     const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 8000);
+    const timeout = setTimeout(() => controller.abort(), 25000);
 
+    console.log("[audit/ai] Sending request to Anthropic API...");
     const response = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -229,6 +230,7 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
     });
 
     clearTimeout(timeout);
+    console.log(`[audit/ai] Anthropic responded — status: ${response.status}, ok: ${response.ok}`);
 
     if (!response.ok) {
       const errorBody = await response.text();
