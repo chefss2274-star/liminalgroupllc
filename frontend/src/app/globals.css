@@ -337,19 +337,20 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
+  font-size: clamp(4rem, 8vw, 7rem);
   line-height: 0.95;
   letter-spacing: -0.02em;
   font-weight: 400;
   color: #ffffff;
   margin-bottom: 24px;
+  text-shadow: 0 4px 40px rgba(0,0,0,0.3);
 }
 
 .hero-desc {
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.75;
-  max-width: 600px;
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.8;
+  max-width: 640px;
   margin-bottom: 36px;
 }
 
@@ -364,7 +365,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .trust-strip {
   background: #f0ede8;
   border-bottom: 1px solid var(--line-light);
-  padding: 40px 0;
+  padding: 60px 0;
+  position: relative;
+}
+
+.trust-strip::before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7c6955, transparent);
+  margin: 0 auto 48px;
 }
 
 .trust-strip-grid {
@@ -379,34 +390,35 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 32px;
+  padding: 0 40px;
 }
 
 .trust-label {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  color: var(--text);
-  margin-bottom: 8px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
 }
 
 .trust-desc {
-  font-size: 0.88rem;
-  color: var(--text-secondary);
+  font-size: 1rem;
+  color: #5a5651;
   line-height: 1.6;
   max-width: 240px;
 }
 
 .trust-divider {
   width: 1px;
-  height: 60px;
-  background: var(--line);
-  align-self: center;
+  align-self: stretch;
+  background: rgba(0,0,0,0.08);
+  margin: 0 8px;
 }
 
 @media (max-width: 720px) {
   .trust-strip-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
+    gap: 36px;
   }
   .trust-divider { display: none; }
   .trust-item { padding: 0; }
@@ -416,9 +428,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 15px 28px;
+  padding: 18px 36px;
   border-radius: 999px;
-  font-size: 0.92rem;
+  font-size: 1rem;
   font-weight: 600;
   border: 1px solid transparent;
   transition: all 0.3s var(--ease);
