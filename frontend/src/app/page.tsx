@@ -177,11 +177,18 @@ export default function Home() {
       <main id="main" data-testid="main-content">
         {/* Hero */}
         <section className="hero" id="top" data-testid="hero-section">
-          {/* Floating ambient orbs */}
-          <div className="hero-orb hero-orb-1" aria-hidden="true" />
-          <div className="hero-orb hero-orb-2" aria-hidden="true" />
-          <div className="hero-orb hero-orb-3" aria-hidden="true" />
-          <div className="hero-orb hero-orb-4" aria-hidden="true" />
+          {/* Video background */}
+          <video
+            className="hero-video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-hidden="true"
+          >
+            <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          </video>
+          <div className="hero-video-overlay" aria-hidden="true" />
 
           <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
