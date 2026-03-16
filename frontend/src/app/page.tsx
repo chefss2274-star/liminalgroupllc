@@ -178,33 +178,101 @@ export default function Home() {
         {/* Hero */}
         <section className="hero" id="top" data-testid="hero-section">
           <div className="container hero-content">
-            <div className="hero-eyebrow reveal">Liminal Group LLC</div>
-            <h1 className="reveal reveal-delay-1">
-              Cross the
-              <br />
-              Threshold
-            </h1>
-            <p className="hero-desc reveal reveal-delay-2">
-              Modern websites that help businesses move into their next stage online. We combine strategic
-              thinking, clean design, and emerging tools to turn outdated sites into platforms that generate
-              real customers.
-            </p>
-            <div className="hero-actions reveal reveal-delay-3">
-              <Link
-                href="/audit"
-                className="btn btn-primary"
-                data-testid="hero-cta-primary"
-              >
-                Get Your Free Audit
-              </Link>
-              <a
-                href="#demos"
-                className="btn btn-secondary"
-                onClick={(e) => handleAnchorClick(e, "#demos")}
-                data-testid="hero-cta-secondary"
-              >
-                View Demo Websites
-              </a>
+            {/* Left: text */}
+            <div className="hero-text">
+              <div className="hero-eyebrow reveal">Liminal Group LLC</div>
+              <h1 className="reveal reveal-delay-1">
+                Cross the
+                <br />
+                Threshold
+              </h1>
+              <p className="hero-desc reveal reveal-delay-2">
+                Modern websites that help businesses move into their next stage online. We combine strategic
+                thinking, clean design, and emerging tools to turn outdated sites into platforms that generate
+                real customers.
+              </p>
+              <div className="hero-actions reveal reveal-delay-3">
+                <Link href="/audit" className="btn btn-primary" data-testid="hero-cta-primary">
+                  Get Your Free Audit
+                </Link>
+                <a
+                  href="#demos"
+                  className="btn btn-secondary"
+                  onClick={(e) => handleAnchorClick(e, "#demos")}
+                  data-testid="hero-cta-secondary"
+                >
+                  View Demo Websites
+                </a>
+              </div>
+            </div>
+
+            {/* Right: transformation mockup */}
+            <div className="hero-visual reveal reveal-delay-2" aria-hidden="true">
+
+              {/* Before browser frame */}
+              <div className="browser-frame browser-frame-before">
+                <div className="browser-toolbar browser-toolbar-before">
+                  <div className="browser-dot" />
+                  <div className="browser-dot" />
+                  <div className="browser-dot" />
+                  <div className="browser-urlbar" />
+                </div>
+                <div className="browser-screen browser-screen-before">
+                  <div className="mock-before-header">
+                    <div className="mock-before-title">Bella&apos;s Italian Kitchen</div>
+                  </div>
+                  <div className="mock-before-nav">
+                    {["Home","Menu","Specials","Catering","Wine","Gallery","Reviews","About","Contact"].map(l => (
+                      <span key={l} className="mock-before-navitem">{l}</span>
+                    ))}
+                  </div>
+                  <div className="mock-before-blink">
+                    <span>★ CLICK HERE FOR SPECIALS ★</span>
+                  </div>
+                  <div className="mock-before-body">
+                    <div className="mock-before-body-text">
+                      We are a family-owned restaurant serving authentic Italian cuisine since 1987. Our recipes have been passed down through generations...
+                    </div>
+                    {[["Fettuccine Alfredo","$16.99"],["Chicken Parm","$18.99"],["Lasagna","$17.99"],["Pizza","$14.99"]].map(([n,p]) => (
+                      <div key={n} className="mock-before-menu-row">
+                        <span>{n}</span>
+                        <span className="mock-before-menu-price">{p}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* After browser frame */}
+              <div className="browser-frame browser-frame-after">
+                <div className="browser-toolbar browser-toolbar-after">
+                  <div className="browser-dot" />
+                  <div className="browser-dot" />
+                  <div className="browser-dot" />
+                  <div className="browser-urlbar" />
+                </div>
+                <div className="browser-screen browser-screen-after">
+                  <div className="mock-after-header">
+                    <span className="mock-after-logo">Bella&apos;s</span>
+                    <span className="mock-after-cta-sm">Reserve</span>
+                  </div>
+                  <div className="mock-after-hero">
+                    <div className="mock-after-eyebrow">Indianapolis · Since 1987</div>
+                    <div className="mock-after-headline">Where Family<br />Meets la Tavola</div>
+                    <div className="mock-after-btn">Reserve a Table</div>
+                  </div>
+                  <div className="mock-after-body">
+                    <div className="mock-after-section-label">Tonight&apos;s Menu</div>
+                    {[["Tagliatelle al Ragù","$22"],["Branzino al Forno","$28"],["Pappardelle ai Funghi","$19"]].map(([n,p]) => (
+                      <div key={n} className="mock-after-menu-row">
+                        <span className="mock-after-dish">{n}</span>
+                        <span className="mock-after-price">{p}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
