@@ -174,7 +174,7 @@ async function generateAiSummary(
     return { text: "", error: "ANTHROPIC_API_KEY is not configured." };
   }
 
-  console.log(`[audit/ai] Key prefix: ${apiKey.slice(0, 10)}... | Model: claude-haiku-4-5-20251001`);
+  console.log(`[audit/ai] Key prefix: ${apiKey.slice(0, 10)}... | Model: claude-3-5-haiku-20241022`);
 
   const passed = checks.filter((c) => c.passed);
   const failed = checks.filter((c) => !c.passed);
@@ -220,7 +220,7 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        model: "claude-haiku-4-5-20251001",
+        model: "claude-3-5-haiku-20241022",
         max_tokens: 600,
         system: "You are a helpful website consultant who provides clear, actionable advice for small business owners.",
         messages: [{ role: "user", content: prompt }],
