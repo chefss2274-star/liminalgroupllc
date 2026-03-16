@@ -178,6 +178,9 @@ export default function Home() {
       <main id="main" data-testid="main-content">
         {/* Hero */}
         <section className="hero" id="top" data-testid="hero-section">
+          <div className="hero-glow hero-glow-1" aria-hidden="true" />
+          <div className="hero-glow hero-glow-2" aria-hidden="true" />
+          <div className="hero-glow hero-glow-3" aria-hidden="true" />
 
           <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
