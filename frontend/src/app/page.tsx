@@ -177,12 +177,9 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{position:'relative',overflow:'hidden',background:'#0f0e0c'}}>
-          <div aria-hidden="true" style={{position:'absolute',borderRadius:'50%',filter:'blur(100px)',pointerEvents:'none',zIndex:1,width:'600px',height:'600px',background:'rgba(124,105,85,0.35)',top:'-10%',left:'-5%',animation:'glowFloat1 12s ease-in-out infinite alternate'}} />
-          <div aria-hidden="true" style={{position:'absolute',borderRadius:'50%',filter:'blur(100px)',pointerEvents:'none',zIndex:1,width:'500px',height:'500px',background:'rgba(160,130,100,0.25)',bottom:'-10%',right:'-5%',animation:'glowFloat2 15s ease-in-out infinite alternate'}} />
-          <div aria-hidden="true" style={{position:'absolute',borderRadius:'50%',filter:'blur(100px)',pointerEvents:'none',zIndex:1,width:'400px',height:'400px',background:'rgba(140,110,80,0.2)',top:'40%',left:'50%',animation:'glowFloat3 18s ease-in-out infinite alternate'}} />
+        <section className="hero" id="top" data-testid="hero-section" style={{position:'relative',overflow:'hidden',minHeight:'90vh',display:'flex',alignItems:'center',background:'radial-gradient(ellipse at 30% 40%, #2a1f18 0%, #0f0e0c 60%), radial-gradient(ellipse at 70% 60%, #1f1a14 0%, #0f0e0c 70%)'}}>
 
-          <div className="container hero-content" style={{position:'relative',zIndex:3}}>
+          <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
             <h1 className="reveal reveal-delay-1">
               Cross the
