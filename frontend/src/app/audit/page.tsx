@@ -259,11 +259,7 @@ export default function AuditPage() {
                 {result.ai_summary ? (
                   <p className="audit-ai-text">{result.ai_summary}</p>
                 ) : (
-                  <p className="audit-ai-loading">
-                    {result.ai_error
-                      ? `AI summary error: ${result.ai_error}`
-                      : "AI summary unavailable — add ANTHROPIC_API_KEY in Vercel to enable."}
-                  </p>
+                  <p className="audit-ai-loading">Our team will review your site and send a detailed analysis to your email within 24 hours.</p>
                 )}
               </div>
 
