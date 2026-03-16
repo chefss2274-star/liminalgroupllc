@@ -213,16 +213,17 @@ export default function Home() {
           <div className="container">
             <div className="trust-strip-grid">
               <div className="trust-item reveal">
+                <span className="trust-num">01</span>
                 <span className="trust-label">Clarity</span>
                 <span className="trust-desc">Clean messaging that tells visitors exactly what you do and why they should act now.</span>
               </div>
-              <div className="trust-divider" aria-hidden="true" />
               <div className="trust-item reveal reveal-delay-1">
+                <span className="trust-num">02</span>
                 <span className="trust-label">Credibility</span>
                 <span className="trust-desc">Modern design and trust signals that make your business feel established and reliable.</span>
               </div>
-              <div className="trust-divider" aria-hidden="true" />
               <div className="trust-item reveal reveal-delay-2">
+                <span className="trust-num">03</span>
                 <span className="trust-label">Momentum</span>
                 <span className="trust-desc">From free audit to live website — every step is built to move your business forward.</span>
               </div>
