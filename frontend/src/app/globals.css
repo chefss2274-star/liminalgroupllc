@@ -3690,3 +3690,67 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.45) 100%);
   pointer-events: none;
 }
+
+/* ═══════════════════════════════════════════
+   START HERE PAGE
+═══════════════════════════════════════════ */
+
+.sh-section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.sh-section-inner-md {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 48px;
+  text-align: center;
+}
+
+.sh-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.sh-deliverables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 48px;
+  text-align: left;
+  margin-bottom: 56px;
+}
+
+.sh-cta-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .sh-section-inner,
+  .sh-section-inner-md {
+    padding: 0 24px;
+  }
+
+  .sh-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .sh-deliverables {
+    grid-template-columns: 1fr;
+  }
+
+  .sh-cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sh-cta-btns a {
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+}
