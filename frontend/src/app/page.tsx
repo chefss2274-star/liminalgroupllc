@@ -300,7 +300,7 @@ export default function Home() {
         <section className="mobile-stats-section" data-testid="mobile-stats-section">
           <div className="container">
             <div className="mobile-stats-header reveal">
-              <div className="section-label" style={{ color: "rgba(255,255,255,0.75)", borderColor: "rgba(255,255,255,0.25)" }}>Why Mobile Matters</div>
+              <div className="section-label">Why Mobile Matters</div>
               <h2 className="mobile-stats-headline">Your Customers Are on Their Phones</h2>
             </div>
             <div className="mobile-stats-grid">
@@ -327,7 +327,7 @@ export default function Home() {
             </div>
 
             {/* Before/After Phone Mockup Comparison */}
-            <div className="phone-comparison reveal" style={{ marginTop: "3rem" }}>
+            <div className="phone-comparison reveal">
               <div className="phone-comparison-grid">
 
                 {/* ── BEFORE Phone ── */}
@@ -425,6 +425,15 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
+                </div>
+
+                {/* ── VS divider ── */}
+                <div className="phone-vs-divider">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="9" stroke="var(--line)" strokeWidth="1.5" />
+                    <path d="M7 10h6M13 10l-2-2M13 10l-2 2" stroke="var(--text-tertiary)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>vs</span>
                 </div>
 
                 {/* ── AFTER Phone ── */}

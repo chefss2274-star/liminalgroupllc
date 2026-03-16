@@ -3221,8 +3221,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* ── Mobile Stats Section ─────────────────────────────────────────────────── */
 
 .mobile-stats-section {
-  background: #1a1a1a;
-  padding: 72px 0;
+  background: var(--bg-warm);
+  padding: 80px 0;
 }
 
 .mobile-stats-header {
@@ -3236,40 +3236,41 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .mobile-stats-headline {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  color: #ffffff;
+  color: var(--text);
   margin: 0;
   line-height: 1.2;
 }
 
 .mobile-stats-link {
   font-size: 0.88rem;
-  color: var(--warm-mid);
+  color: var(--accent-warm);
   text-decoration: none;
   white-space: nowrap;
   transition: color 0.2s;
 }
 
 .mobile-stats-link:hover {
-  color: #ffffff;
+  color: var(--text);
 }
 
 .mobile-stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px;
+  gap: 12px;
 }
 
 .mobile-stat {
-  padding: 36px 28px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  padding: 32px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
 }
 
 .mobile-stat-number {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 4vw, 3.2rem);
-  color: #ffffff;
+  color: var(--text);
   line-height: 1;
   margin-bottom: 6px;
 }
@@ -3279,13 +3280,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--accent-warm);
   margin-bottom: 10px;
 }
 
 .mobile-stat-desc {
   font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-secondary);
   line-height: 1.5;
 }
 
@@ -3296,10 +3297,6 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 @media (max-width: 540px) {
-  .mobile-stats-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
   .mobile-stats-grid {
     grid-template-columns: 1fr;
   }
@@ -3308,17 +3305,45 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* ── Phone Mockup Comparison ──────────────────────────────────────────────── */
 
 .phone-comparison {
-  max-width: 640px;
+  max-width: 680px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 3.5rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2rem 1.75rem;
+  box-shadow: var(--shadow-md);
 }
 
 .phone-comparison-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0;
   align-items: start;
   justify-items: center;
+}
+
+.phone-vs-divider {
+  align-self: center;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-tertiary);
+}
+
+.phone-vs-divider span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+.phone-vs-divider svg {
+  display: block;
 }
 
 .phone-mockup-wrapper {
@@ -3421,9 +3446,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 @media (max-width: 640px) {
+  .phone-comparison {
+    padding: 1.5rem 1.25rem;
+  }
+
   .phone-comparison-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    row-gap: 1.5rem;
+  }
+
+  .phone-vs-divider {
+    flex-direction: row;
+    padding: 0;
+    gap: 8px;
   }
 
   .phone-frame-comparison {
