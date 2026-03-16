@@ -339,54 +339,54 @@ export default function Home() {
                       <div className="phone-screen-inner">
 
                         {/* Tacky header */}
-                        <div style={{ background: "#1a0a00", padding: "6px 5px 5px", textAlign: "center", borderBottom: "2px solid #8B6914" }}>
-                          <div style={{ fontSize: "10px", fontFamily: "Georgia, 'Times New Roman', serif", color: "#c8a030", fontStyle: "italic", fontWeight: "bold", lineHeight: 1.1 }}>
+                        <div style={{ background: "#2a0e00", padding: "6px 5px 5px", textAlign: "center", borderBottom: "2px solid #8B6914" }}>
+                          <div style={{ fontSize: "10px", fontFamily: "Georgia, 'Times New Roman', serif", color: "#d4a439", fontStyle: "italic", fontWeight: "bold", lineHeight: 1.1 }}>
                             Bella&apos;s Italian Kitchen
                           </div>
-                          <div style={{ fontSize: "5px", color: "#7a5a10", letterSpacing: "0.06em", marginTop: "1px" }}>EST. 1987 · AUTHENTIC ITALIAN CUISINE</div>
+                          <div style={{ fontSize: "5px", color: "#9a7020", letterSpacing: "0.06em", marginTop: "1px" }}>EST. 1987 · AUTHENTIC ITALIAN CUISINE</div>
                         </div>
 
                         {/* 9 cramped nav links wrapping */}
-                        <div style={{ background: "#2d1500", padding: "3px 3px", display: "flex", flexWrap: "wrap", gap: "1px", justifyContent: "center", borderBottom: "1px solid #5a3000" }}>
+                        <div style={{ background: "#3a1a00", padding: "3px 3px", display: "flex", flexWrap: "wrap", gap: "1px", justifyContent: "center", borderBottom: "1px solid #6b3a10" }}>
                           {["Home", "Menu", "Specials", "Catering", "Wine List", "Gallery", "Reviews", "About", "Contact"].map((link) => (
-                            <span key={link} style={{ fontSize: "5px", color: "#d4a535", padding: "1px 2px", background: "#3d1f00", border: "1px solid #5a3000", whiteSpace: "nowrap" }}>{link}</span>
+                            <span key={link} style={{ fontSize: "5px", color: "#d4a439", padding: "1px 2px", background: "#4a2200", border: "1px solid #6b3a10", whiteSpace: "nowrap" }}>{link}</span>
                           ))}
                         </div>
 
                         {/* Blinking specials button */}
-                        <div style={{ background: "#1a0a00", padding: "4px 5px", textAlign: "center" }}>
-                          <span className="bellas-blink" style={{ fontSize: "6px", background: "#cc0000", color: "#ffff00", padding: "2px 5px", display: "inline-block", border: "2px solid #ff4444", fontWeight: "bold", letterSpacing: "0.03em" }}>
+                        <div style={{ background: "#3a1a00", padding: "4px 5px", textAlign: "center" }}>
+                          <span className="bellas-blink" style={{ fontSize: "6px", background: "#cc0000", color: "#ffffff", padding: "2px 5px", display: "inline-block", border: "2px solid #ff4444", fontWeight: "bold", letterSpacing: "0.03em" }}>
                             ★ CLICK HERE FOR SPECIALS ★
                           </span>
                         </div>
 
                         {/* Wall of text + hours sidebar */}
-                        <div style={{ background: "#1a0a00", padding: "5px 5px 4px", display: "flex", gap: "4px" }}>
+                        <div style={{ background: "#3a1a00", padding: "5px 5px 4px", display: "flex", gap: "4px" }}>
                           <div style={{ flex: 1 }}>
-                            <div style={{ fontSize: "6.5px", color: "#c8a030", fontWeight: "bold", fontStyle: "italic", fontFamily: "Georgia, serif", marginBottom: "3px" }}>Welcome to Bella&apos;s!</div>
-                            <div style={{ fontSize: "5.5px", color: "#907030", lineHeight: 1.55 }}>
-                              We are a family-owned restaurant serving authentic Italian cuisine since 1987. Our recipes have been passed down through generations and we use only the freshest ingredients sourced locally. Come dine with us and experience the true taste of Italy right here in Indianapolis! We look forward to serving you and your whole family.
+                            <div style={{ fontSize: "6.5px", color: "#d4a439", fontWeight: "bold", fontStyle: "italic", fontFamily: "Georgia, serif", marginBottom: "3px" }}>Welcome to Bella&apos;s!</div>
+                            <div style={{ fontSize: "5.5px", color: "#c4a87a", lineHeight: 1.55 }}>
+                              We are a family-owned restaurant serving authentic Italian cuisine since 1987. Our recipes have been passed down through generations and we use only the freshest ingredients sourced locally. Come dine with us and experience the true taste of Italy right here in Indianapolis!
                             </div>
                           </div>
                           {/* Hours sidebar */}
-                          <div style={{ width: "38px", flexShrink: 0, background: "#0d0500", border: "1px solid #5a3000", padding: "3px 2px", fontSize: "4.5px", color: "#907030", lineHeight: 1.5 }}>
-                            <div style={{ fontWeight: "bold", color: "#c8a030", marginBottom: "1px", fontSize: "5px" }}>HOURS</div>
+                          <div style={{ width: "38px", flexShrink: 0, background: "#2a0e00", border: "1px solid #6b3a10", padding: "3px 2px", fontSize: "4.5px", color: "#c4a87a", lineHeight: 1.5 }}>
+                            <div style={{ fontWeight: "bold", color: "#d4a439", marginBottom: "1px", fontSize: "5px" }}>HOURS</div>
                             <div>Mon–Thu</div>
                             <div>11am–9pm</div>
                             <div>Fri–Sat</div>
                             <div>11am–10pm</div>
                             <div>Sun: 12–8</div>
-                            <div style={{ marginTop: "3px", borderTop: "1px solid #3d1f00", paddingTop: "2px" }}>
-                              <div style={{ fontWeight: "bold", color: "#c8a030" }}>FAX:</div>
+                            <div style={{ marginTop: "3px", borderTop: "1px solid #6b3a10", paddingTop: "2px" }}>
+                              <div style={{ fontWeight: "bold", color: "#d4a439" }}>FAX:</div>
                               <div>317-555-0147</div>
                             </div>
                           </div>
                         </div>
 
                         {/* Visitor counter footer */}
-                        <div style={{ background: "#0d0500", padding: "4px 5px", textAlign: "center", borderTop: "1px solid #3d1f00" }}>
-                          <div style={{ fontSize: "5px", color: "#5a3c10" }}>You are visitor #14,832</div>
-                          <div style={{ fontSize: "4.5px", color: "#3d2800", marginTop: "1px" }}>© 1987–2009 Bella&apos;s Italian Kitchen. All rights reserved.</div>
+                        <div style={{ background: "#2a0e00", padding: "4px 5px", textAlign: "center", borderTop: "1px solid #6b3a10" }}>
+                          <div style={{ fontSize: "5px", color: "#9a7020" }}>You are visitor #14,832</div>
+                          <div style={{ fontSize: "4.5px", color: "#7a5518", marginTop: "1px" }}>© 1987–2009 Bella&apos;s Italian Kitchen. All rights reserved.</div>
                         </div>
 
                       </div>
@@ -408,20 +408,20 @@ export default function Home() {
                           <div style={{ fontSize: "6px", background: "#c8a96e", color: "#1c1209", padding: "3px 7px", borderRadius: "10px", fontWeight: "700" }}>Reserve</div>
                         </div>
 
-                        {/* Dark hero section */}
-                        <div style={{ background: "#1c1209", padding: "18px 9px 16px", textAlign: "center", borderTop: "1px solid rgba(200,169,110,0.15)", borderBottom: "1px solid rgba(200,169,110,0.15)" }}>
-                          <div style={{ fontSize: "5.5px", color: "#c8a96e", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "6px" }}>Indianapolis, since 1998</div>
-                          <div style={{ fontSize: "12px", fontFamily: "Georgia, 'Times New Roman', serif", color: "#f0e6cc", lineHeight: 1.25, marginBottom: "10px", fontStyle: "italic" }}>
+                        {/* Dark hero section — flex-fills remaining space */}
+                        <div style={{ background: "#1c1209", flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "10px 9px", borderTop: "1px solid rgba(200,169,110,0.15)", borderBottom: "1px solid rgba(200,169,110,0.15)" }}>
+                          <div style={{ fontSize: "5.5px", color: "#c8a96e", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "7px" }}>Indianapolis, since 1998</div>
+                          <div style={{ fontSize: "13px", fontFamily: "Georgia, 'Times New Roman', serif", color: "#f0e6cc", lineHeight: 1.25, marginBottom: "12px", fontStyle: "italic" }}>
                             Where Family<br />Meets la Tavola
                           </div>
-                          <div style={{ fontSize: "6.5px", background: "#c8a96e", color: "#1c1209", padding: "4px 10px", borderRadius: "10px", fontWeight: "700", display: "inline-block" }}>
+                          <div style={{ fontSize: "6.5px", background: "#c8a96e", color: "#1c1209", padding: "5px 12px", borderRadius: "10px", fontWeight: "700", display: "inline-block" }}>
                             Reserve a Table
                           </div>
                         </div>
 
                         {/* Menu section */}
-                        <div style={{ background: "#f5f0e8", padding: "8px 9px 6px" }}>
-                          <div style={{ fontSize: "5.5px", color: "#8a7055", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "6px", fontWeight: "700" }}>Tonight&apos;s Menu</div>
+                        <div style={{ background: "#faf8f5", padding: "7px 9px 5px" }}>
+                          <div style={{ fontSize: "5.5px", color: "#8a7055", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "5px", fontWeight: "700" }}>Tonight&apos;s Menu</div>
                           {[
                             { name: "Tagliatelle al Ragù", price: "$22" },
                             { name: "Branzino al Forno", price: "$28" },
@@ -435,7 +435,7 @@ export default function Home() {
                         </div>
 
                         {/* Dark CTA box */}
-                        <div style={{ background: "#1c1209", padding: "12px 9px", textAlign: "center" }}>
+                        <div style={{ background: "#1c1209", padding: "10px 9px 11px", textAlign: "center" }}>
                           <div style={{ fontSize: "7.5px", fontFamily: "Georgia, serif", color: "#e8d5b0", fontStyle: "italic", marginBottom: "7px", lineHeight: 1.3 }}>
                             Your table is waiting.
                           </div>

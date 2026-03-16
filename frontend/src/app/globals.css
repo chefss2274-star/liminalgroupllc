@@ -3352,7 +3352,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* Base phone-frame styles for comparison mockups */
 .phone-frame-comparison {
   width: 175px;
-  max-height: 480px;
+  height: 420px;
   border: 3px solid #2a2a2a;
   border-radius: 28px;
   background: #111;
@@ -3362,7 +3362,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
     inset 0 0 0 1px rgba(255, 255, 255, 0.04),
     0 24px 48px rgba(0, 0, 0, 0.6);
   position: relative;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .phone-notch {
@@ -3392,19 +3393,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .phone-screen {
   border-radius: 8px;
   overflow: hidden;
+  flex: 1;
 }
 
 .phone-screen-before {
-  background: #1a0a00;
+  background: #3a1a00;
 }
 
 .phone-screen-after {
-  background: #f5f0e8;
+  background: #faf8f5;
 }
 
 .phone-screen-inner {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 /* Blinking animation for the bad "before" site */
