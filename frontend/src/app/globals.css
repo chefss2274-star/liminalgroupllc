@@ -3727,19 +3727,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 ═══════════════════════════════════════════ */
 
 .sh-callout-card {
-  border: 1px solid rgba(201,168,76,0.25);
+  border: 1px solid rgba(138,111,62,0.4);
   border-radius: 8px;
   padding: 36px 48px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: rgba(26,23,18,0.06);
 }
 
 .sh-callout-btn {
   display: inline-block;
-  border: 1px solid #c9a84c;
-  color: #c9a84c;
+  border: 1px solid #8a6f3e;
+  color: #8a6f3e;
   background: transparent;
   padding: 14px 36px;
   border-radius: 6px;
@@ -3752,7 +3752,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .sh-callout-btn:hover {
-  background: rgba(201,168,76,0.08);
+  background: rgba(138,111,62,0.08);
 }
 
 @media (max-width: 768px) {

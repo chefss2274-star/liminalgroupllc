@@ -502,9 +502,9 @@ export default function Home() {
         <div className="container" style={{marginBottom: '80px'}}>
           <div className="sh-callout-card">
             <div>
-              <p style={{color: '#c9a84c', fontSize: '0.7rem', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '8px'}}>NO WEBSITE YET?</p>
-              <h3 style={{color: '#ffffff', fontSize: '1.3rem', fontWeight: 600, margin: 0}}>Building from the ground up? We do that too.</h3>
-              <p style={{color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', marginTop: '6px'}}>Starting fresh is an advantage. We&apos;ll build it right the first time.</p>
+              <p style={{color: '#8a6f3e', fontSize: '0.7rem', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '8px'}}>NO WEBSITE YET?</p>
+              <h3 style={{color: '#1a1712', fontSize: '1.3rem', fontWeight: 600, margin: 0}}>Building from the ground up? We do that too.</h3>
+              <p style={{color: 'rgba(26,23,18,0.55)', fontSize: '0.85rem', marginTop: '6px'}}>Starting fresh is an advantage. We&apos;ll build it right the first time.</p>
             </div>
             <Link href="/start-here" className="sh-callout-btn">Start Here →</Link>
           </div>
