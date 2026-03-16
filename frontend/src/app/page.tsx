@@ -177,7 +177,7 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{background: '#2c2420', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{background: '#4a3f38', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
 
           <div className="container hero-content">
             <hr className="hero-rule" aria-hidden="true" />
