@@ -177,70 +177,59 @@ export default function Home() {
       <main id="main" data-testid="main-content">
         {/* Hero */}
         <section className="hero" id="top" data-testid="hero-section">
-          <div className="container hero-layout">
-            <div>
-              <div className="hero-eyebrow reveal">Liminal Group LLC</div>
-              <h1 className="reveal reveal-delay-1">
-                Cross the
-                <br />
-                Threshold
-              </h1>
-              <p className="hero-desc reveal reveal-delay-2">
-                Modern websites that help businesses move into their next stage online. We combine strategic
-                thinking, clean design, and emerging tools to turn outdated sites into platforms that generate
-                real customers.
-              </p>
-              <div className="hero-actions reveal reveal-delay-3">
-                <Link
-                  href="/audit"
-                  className="btn btn-primary"
-                  data-testid="hero-cta-primary"
-                >
-                  Get Your Free Audit
-                </Link>
-                <a
-                  href="#demos"
-                  className="btn btn-secondary"
-                  onClick={(e) => handleAnchorClick(e, "#demos")}
-                  data-testid="hero-cta-secondary"
-                >
-                  View Demo Websites
-                </a>
-              </div>
+          <div className="container hero-content">
+            <div className="hero-eyebrow reveal">Liminal Group LLC</div>
+            <h1 className="reveal reveal-delay-1">
+              Cross the
+              <br />
+              Threshold
+            </h1>
+            <p className="hero-desc reveal reveal-delay-2">
+              Modern websites that help businesses move into their next stage online. We combine strategic
+              thinking, clean design, and emerging tools to turn outdated sites into platforms that generate
+              real customers.
+            </p>
+            <div className="hero-actions reveal reveal-delay-3">
+              <Link
+                href="/audit"
+                className="btn btn-primary"
+                data-testid="hero-cta-primary"
+              >
+                Get Your Free Audit
+              </Link>
+              <a
+                href="#demos"
+                className="btn btn-secondary"
+                onClick={(e) => handleAnchorClick(e, "#demos")}
+                data-testid="hero-cta-secondary"
+              >
+                View Demo Websites
+              </a>
             </div>
-
-            <aside className="hero-card reveal reveal-delay-2" aria-label="What Liminal delivers">
-              <div className="hero-card-brand">
-                <BrandMark className="brand-mark" style={{ width: 44, height: 44 }} />
-                <span className="brand-lockup">
-                  <span className="brand-name" style={{ fontSize: "0.82rem" }}>
-                    Liminal
-                  </span>
-                  <span className="brand-sub">Cross the Threshold</span>
-                </span>
-              </div>
-
-              <div className="metric">
-                <span className="metric-label">Clarity</span>
-                <span className="metric-desc">
-                  Clean messaging that tells visitors exactly what you do and why they should act now.
-                </span>
-              </div>
-              <div className="metric">
-                <span className="metric-label">Credibility</span>
-                <span className="metric-desc">
-                  Modern design and trust signals that make your business feel established and reliable.
-                </span>
-              </div>
-              <div className="metric">
-                <span className="metric-label">Momentum</span>
-                <span className="metric-desc">
-                  From free audit to live website — every step is built to move your business forward.
-                </span>
-              </div>
-            </aside>
           </div>
         </section>
+
+        {/* Trust Strip */}
+        <div className="trust-strip" data-testid="trust-strip">
+          <div className="container">
+            <div className="trust-strip-grid">
+              <div className="trust-item reveal">
+                <span className="trust-label">Clarity</span>
+                <span className="trust-desc">Clean messaging that tells visitors exactly what you do and why they should act now.</span>
+              </div>
+              <div className="trust-divider" aria-hidden="true" />
+              <div className="trust-item reveal reveal-delay-1">
+                <span className="trust-label">Credibility</span>
+                <span className="trust-desc">Modern design and trust signals that make your business feel established and reliable.</span>
+              </div>
+              <div className="trust-divider" aria-hidden="true" />
+              <div className="trust-item reveal reveal-delay-2">
+                <span className="trust-label">Momentum</span>
+                <span className="trust-desc">From free audit to live website — every step is built to move your business forward.</span>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div className="section-divider" aria-hidden="true" />
 
