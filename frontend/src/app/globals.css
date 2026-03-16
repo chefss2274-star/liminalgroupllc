@@ -121,7 +121,24 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .reveal:not(.visible) {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(20px);
+}
+
+/* ── Section Divider ───────────────────────── */
+.section-divider {
+  display: flex;
+  justify-content: center;
+  height: 1px;
+  overflow: visible;
+  margin: 0;
+}
+
+.section-divider::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #7c6955, transparent);
 }
 
 .reveal.visible {
@@ -261,17 +278,21 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
    HERO
 ═══════════════════════════════════════════ */
 .hero {
-  padding: 100px 0 80px;
+  min-height: 90vh;
+  padding: 120px 0 100px;
   position: relative;
+  background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(ellipse at top left, rgba(124, 105, 85, 0.06) 0%, transparent 55%),
-    radial-gradient(ellipse at bottom right, rgba(196, 160, 120, 0.04) 0%, transparent 55%);
+  background: linear-gradient(180deg, rgba(26,25,22,0.85) 0%, rgba(26,25,22,0.92) 100%);
   pointer-events: none;
   z-index: 0;
 }
@@ -291,6 +312,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-eyebrow {
@@ -301,7 +324,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   font-weight: 600;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--accent-warm);
+  color: #c4a87a;
   margin-bottom: 28px;
 }
 
@@ -309,7 +332,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   content: "";
   width: 48px;
   height: 1px;
-  background: var(--accent-warm);
+  background: #c4a87a;
 }
 
 .hero h1 {
@@ -318,13 +341,13 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   line-height: 0.95;
   letter-spacing: -0.02em;
   font-weight: 400;
-  color: var(--text);
+  color: #ffffff;
   margin-bottom: 24px;
 }
 
 .hero-desc {
   font-size: 1.1rem;
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.7);
   line-height: 1.7;
   max-width: 520px;
   margin-bottom: 36px;
@@ -350,16 +373,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #2a2520 0%, #1a1a1a 100%);
-  color: var(--bg);
-  border-color: #2a2520;
+  background: #7c6955;
+  color: #ffffff;
+  border-color: #7c6955;
 }
 
 .btn-primary:hover {
-  background: var(--accent-warm);
-  border-color: var(--accent-warm);
+  background: #6a5947;
+  border-color: #6a5947;
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(124, 105, 85, 0.2);
+  box-shadow: 0 8px 24px rgba(124, 105, 85, 0.35);
 }
 
 .btn-secondary {
@@ -372,12 +395,26 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   border-color: var(--text);
 }
 
-/* Hero sidebar card */
+/* Ghost button override in hero dark context */
+.hero .btn-secondary {
+  color: #ffffff;
+  border-color: rgba(255,255,255,0.35);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.6);
+  color: #ffffff;
+}
+
+/* Hero sidebar card — frosted glass */
 .hero-card {
-  background: var(--surface);
-  border: 1px solid var(--line-light);
+  background: rgba(26,25,22,0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(124,105,85,0.2);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   padding: 32px;
   position: relative;
   overflow: hidden;
@@ -390,7 +427,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-warm), var(--accent));
+  background: linear-gradient(90deg, #7c6955, #c4a87a);
 }
 
 .hero-card-brand {
@@ -399,14 +436,19 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   gap: 14px;
   margin-bottom: 28px;
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--line-light);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .hero-card-brand .brand-mark { width: 44px; height: 44px; }
 
+.hero-card .brand-mark path { stroke: rgba(255,255,255,0.75); }
+
+.hero-card .brand-name { color: rgba(255,255,255,0.9); }
+.hero-card .brand-sub { color: rgba(255,255,255,0.45); }
+
 .metric {
   padding: 16px 0;
-  border-bottom: 1px solid var(--line-light);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .metric:last-child { border-bottom: none; padding-bottom: 0; }
@@ -414,14 +456,14 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .metric-label {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  color: var(--text);
+  color: #ffffff;
   margin-bottom: 4px;
   display: block;
 }
 
 .metric-desc {
   font-size: 0.9rem;
-  color: var(--text-secondary);
+  color: rgba(255,255,255,0.65);
   line-height: 1.5;
 }
 

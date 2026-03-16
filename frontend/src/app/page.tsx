@@ -242,6 +242,8 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="section-divider" aria-hidden="true" />
+
         {/* Problem Statement */}
         <section className="section" id="services" data-testid="services-section">
           <div className="container">
@@ -501,6 +503,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <div className="section-divider" aria-hidden="true" />
+
         {/* Process */}
         <section className="section process-section" data-testid="process-section">
           <div className="container">
@@ -541,6 +545,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className="section-divider" aria-hidden="true" />
 
         {/* Demo Websites */}
         <section className="section" id="demos" data-testid="demos-section">
@@ -678,6 +684,8 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="section-divider" aria-hidden="true" />
+
         {/* Pricing */}
         <section className="section pricing-section" id="pricing" data-testid="pricing-section">
           <div className="container">
@@ -729,7 +737,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Started — $597 Deposit
+                  Get Started
                 </a>
               </div>
 
@@ -770,7 +778,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Started — $897 Deposit
+                  Get Started
                 </a>
               </div>
 
@@ -810,7 +818,7 @@ export default function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Get Started — $1,297 Deposit
+                  Get Started
                 </a>
               </div>
             </div>
@@ -851,6 +859,8 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="section-divider" aria-hidden="true" />
+
         {/* Audit Form */}
         <section className="section audit-section" id="audit" data-testid="audit-section">
           <div className="container">
@@ -871,6 +881,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <div className="section-divider" aria-hidden="true" />
 
         {/* About */}
         <section className="section" id="about" data-testid="about-section">
