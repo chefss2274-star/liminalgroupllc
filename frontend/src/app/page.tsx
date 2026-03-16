@@ -177,11 +177,10 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center', backgroundImage: 'url(https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?w=1600&q=80)', backgroundSize: 'cover', backgroundPosition: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{background: '#1c1917', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
 
-          <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg, rgba(20,16,12,0.7) 0%, rgba(20,16,12,0.8) 100%)',zIndex:1}} />
-
-          <div className="container hero-content" style={{position:'relative',zIndex:2}}>
+          <div className="container hero-content">
+            <hr className="hero-rule" aria-hidden="true" />
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
             <h1 className="reveal reveal-delay-1">
               Cross the
@@ -206,7 +205,7 @@ export default function Home() {
                 View Demo Websites
               </a>
             </div>
-            <p className="hero-tagline reveal reveal-delay-4" style={{fontSize: '1.1rem', fontStyle: 'normal', color: 'rgba(255,255,255,0.5)', letterSpacing: '0.05em', textTransform: 'uppercase', fontWeight: 500}}>
+            <p className="hero-tagline reveal reveal-delay-4">
               Helping businesses cross the threshold into modern digital presence
             </p>
           </div>
