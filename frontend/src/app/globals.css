@@ -3692,6 +3692,52 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 /* ═══════════════════════════════════════════
+   START HERE CALLOUT CARD (homepage)
+═══════════════════════════════════════════ */
+
+.sh-callout-card {
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 8px;
+  padding: 36px 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+}
+
+.sh-callout-btn {
+  display: inline-block;
+  border: 1px solid #c9a84c;
+  color: #c9a84c;
+  background: transparent;
+  padding: 14px 36px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+  margin-left: 32px;
+}
+
+.sh-callout-btn:hover {
+  background: rgba(201,168,76,0.08);
+}
+
+@media (max-width: 768px) {
+  .sh-callout-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 24px;
+    padding: 36px 24px;
+  }
+
+  .sh-callout-btn {
+    margin-left: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════
    START HERE PAGE
 ═══════════════════════════════════════════ */
 

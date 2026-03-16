@@ -218,6 +218,14 @@ export default function Home() {
               >
                 See Our Work →
               </a>
+              <Link
+                href="/start-here"
+                style={{display: 'block', width: 'fit-content', marginTop: '24px', color: 'rgba(201,168,76,0.7)', fontSize: '0.85rem', letterSpacing: '0.05em', textDecoration: 'none', cursor: 'pointer'}}
+                onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+                onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+              >
+                Starting from zero? We can help →
+              </Link>
             </div>
           </div>
         </section>
@@ -506,6 +514,19 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* Start-Here Callout Card */}
+        <div className="container" style={{marginBottom: '80px'}}>
+          <div className="sh-callout-card">
+            <div>
+              <p style={{color: '#c9a84c', fontSize: '0.7rem', letterSpacing: '0.25em', textTransform: 'uppercase', marginBottom: '8px'}}>NO WEBSITE YET?</p>
+              <h3 style={{color: '#ffffff', fontSize: '1.3rem', fontWeight: 600, margin: 0}}>Building from the ground up? We do that too.</h3>
+              <p style={{color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', marginTop: '6px'}}>Starting fresh is an advantage. We&apos;ll build it right the first time.</p>
+            </div>
+            <Link href="/start-here" className="sh-callout-btn">Start Here →</Link>
+          </div>
+        </div>
+
         <div className="section-divider" aria-hidden="true" />
 
         {/* Process */}
