@@ -409,40 +409,46 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 /* Gold CTA button */
 .hero-btn-gold {
   display: block;
-  width: fit-content;
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid #c9a84c;
   color: #c9a84c;
   background: transparent;
   padding: 18px 40px;
-  border-radius: 2px;
+  border-radius: 6px;
   font-size: 1rem;
   letter-spacing: 0.08em;
   transition: background 0.2s;
   text-decoration: none;
+  text-align: center;
 }
 
 .hero-btn-gold:hover {
   background: rgba(201,168,76,0.1);
+  border-radius: 6px;
 }
 
 /* Ghost CTA button */
 .hero-btn-ghost {
   display: block;
-  width: fit-content;
+  width: 100%;
+  box-sizing: border-box;
   border: 1px solid rgba(255,255,255,0.25);
   color: rgba(255,255,255,0.55);
   background: transparent;
   padding: 18px 40px;
-  border-radius: 2px;
+  border-radius: 6px;
   font-size: 1rem;
   letter-spacing: 0.08em;
   transition: background 0.2s;
   text-decoration: none;
+  text-align: center;
   margin-top: 16px;
 }
 
 .hero-btn-ghost:hover {
   background: rgba(255,255,255,0.05);
+  border-radius: 6px;
 }
 
 /* Mobile divider — hidden on desktop */
