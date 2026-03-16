@@ -100,6 +100,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
   color: var(--text);
   margin-bottom: 16px;
   font-weight: 400;
+  text-shadow: 0 2px 40px rgba(124, 105, 85, 0.1);
 }
 
 .section-desc {
@@ -267,12 +268,22 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 .hero::before {
   content: "";
   position: absolute;
-  top: -200px;
-  right: -100px;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(124, 105, 85, 0.06) 0%, transparent 70%);
+  inset: 0;
+  background:
+    radial-gradient(ellipse at top left, rgba(124, 105, 85, 0.06) 0%, transparent 55%),
+    radial-gradient(ellipse at bottom right, rgba(196, 160, 120, 0.04) 0%, transparent 55%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .hero-layout {
@@ -339,16 +350,16 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .btn-primary {
-  background: var(--text);
+  background: linear-gradient(135deg, #2a2520 0%, #1a1a1a 100%);
   color: var(--bg);
-  border-color: var(--text);
+  border-color: #2a2520;
 }
 
 .btn-primary:hover {
   background: var(--accent-warm);
   border-color: var(--accent-warm);
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(26, 26, 26, 0.12);
+  box-shadow: 0 8px 24px rgba(124, 105, 85, 0.2);
 }
 
 .btn-secondary {
@@ -434,7 +445,9 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 
 .problem-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-4px);
+  border-left: 2px solid #7c6955;
+  background: rgba(124, 105, 85, 0.02);
 }
 
 .problem-num {
@@ -715,16 +728,17 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .pricing-card.featured {
-  background: var(--text);
+  background: linear-gradient(160deg, #2a2520 0%, #1a1a1a 50%, #2a2018 100%);
   color: var(--bg);
-  border-color: var(--text);
-  box-shadow: var(--shadow-lg);
+  border-color: #2a2520;
+  box-shadow: var(--shadow-lg), 0 20px 60px rgba(124, 105, 85, 0.15);
   transform: scale(1.03);
   z-index: 2;
 }
 
 .pricing-card.featured:hover {
-  transform: scale(1.03) translateY(-2px);
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: var(--shadow-lg), 0 28px 70px rgba(124, 105, 85, 0.2);
 }
 
 .pricing-badge {
@@ -1243,7 +1257,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 .cta-box {
-  background: var(--text);
+  background: linear-gradient(135deg, #2a2520 0%, #1a1a1a 50%, #2a2018 100%);
+  border-top: 2px solid var(--accent-warm);
   color: var(--bg);
   border-radius: var(--radius-lg);
   padding: 56px 48px;
