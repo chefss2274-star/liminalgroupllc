@@ -177,7 +177,7 @@ export default function Home() {
       {/* Main */}
       <main id="main" data-testid="main-content">
         {/* Hero */}
-        <section className="hero" id="top" data-testid="hero-section" style={{background: 'radial-gradient(ellipse at 20% 30%, #3d2e1f 0%, transparent 55%), radial-gradient(ellipse at 80% 70%, #2a1f15 0%, transparent 50%), radial-gradient(ellipse at 50% 50%, #1a1610 0%, #0f0e0c 100%)', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
+        <section className="hero" id="top" data-testid="hero-section" style={{background: 'linear-gradient(135deg, #2d2218 0%, #1a1510 25%, #0f0e0c 50%, #1a1510 75%, #2d2218 100%)', position: 'relative', overflow: 'hidden', minHeight: '90vh', display: 'flex', alignItems: 'center'}}>
 
           <div className="container hero-content">
             <div className="hero-eyebrow reveal">Liminal Group LLC</div>
