@@ -218,12 +218,7 @@ export default function Home() {
               >
                 See Our Work →
               </a>
-              <Link
-                href="/start-here"
-                style={{display: 'block', width: 'fit-content', marginTop: '24px', color: 'rgba(201,168,76,0.7)', fontSize: '0.85rem', letterSpacing: '0.05em', textDecoration: 'none', cursor: 'pointer'}}
-                onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
-                onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
-              >
+              <Link href="/start-here" className="hero-zero-link">
                 Starting from zero? We can help →
               </Link>
             </div>

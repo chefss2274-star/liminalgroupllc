@@ -3692,6 +3692,35 @@ button { font: inherit; cursor: pointer; border: none; background: none; }
 }
 
 /* ═══════════════════════════════════════════
+   HERO ZERO LINK PULSE
+═══════════════════════════════════════════ */
+
+@keyframes gentlePulse {
+  0%, 100% { opacity: 0.7; text-shadow: 0 0 8px rgba(201,168,76,0.0); }
+  50% { opacity: 1; text-shadow: 0 0 12px rgba(201,168,76,0.5); }
+}
+
+.hero-zero-link {
+  display: block;
+  width: fit-content;
+  margin-top: 24px;
+  color: rgba(201,168,76,0.7);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  animation: gentlePulse 3s ease-in-out infinite;
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-zero-link:hover {
+  opacity: 1;
+  text-shadow: 0 0 16px rgba(201,168,76,0.7);
+  text-decoration: underline;
+  animation-play-state: paused;
+}
+
+/* ═══════════════════════════════════════════
    START HERE CALLOUT CARD (homepage)
 ═══════════════════════════════════════════ */
 
