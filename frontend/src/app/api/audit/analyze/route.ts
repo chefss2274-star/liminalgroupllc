@@ -208,7 +208,11 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
 
 Do not use markdown formatting of any kind. No asterisks, no pound signs, no bold, no headers. Use plain prose only. Separate sections with line breaks. Use section labels like "Overall Impression:", "Key Opportunities:", "What's Working Well:", and "Recommendation:" as plain text followed by a colon, nothing else.
 
-Do not comment on or suggest expanding the business's geographic service area. Do not suggest the business is limiting itself by serving a local or regional market. Local market focus is intentional and should not be flagged as an opportunity or weakness.`;
+Do not comment on or suggest expanding the business's geographic service area. Do not suggest the business is limiting itself by serving a local or regional market. Local market focus is intentional and should not be flagged as an opportunity or weakness.
+
+In the Recommendation section, position Liminal Group as the solution to the specific issues found in this audit. Reference the actual failures detected. Do not claim that Liminal Group specializes in or has specific experience with the prospect's industry. Instead use language like: "Liminal Group can help address these issues", "Liminal Group works with businesses like yours", or "these are exactly the kinds of improvements Liminal Group delivers." Keep the recommendation confident and specific to the audit findings without making unverifiable claims about industry expertise or specialization.
+
+Never reference Liminal Group's past clients, portfolio, or track record in specific industries. Focus only on what the audit found and what can be fixed. Let the findings do the selling.`;
 
   try {
     const controller = new AbortController();
