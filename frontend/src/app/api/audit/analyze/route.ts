@@ -190,9 +190,7 @@ async function generateAiSummary(
     .replace(/\s+/g, " ")
     .slice(0, 1000);
 
-  const prompt = `You are a website consultant for Liminal Group LLC, a web design agency. Analyze this website audit and provide a brief, actionable summary.
-
-Website: ${url}
+  const prompt = `Website: ${url}
 
 Technical Audit Results:
 ${checkSummary}
@@ -206,7 +204,11 @@ Write a 3-4 paragraph summary that:
 3. Notes what they're doing well (if anything)
 4. Ends with a clear recommendation to work with Liminal Group
 
-Keep it professional but direct. Use "you/your" to address the business owner. Don't be overly negative — frame issues as opportunities.`;
+Keep it professional but direct. Use "you/your" to address the business owner. Don't be overly negative — frame issues as opportunities.
+
+Do not use markdown formatting of any kind. No asterisks, no pound signs, no bold, no headers. Use plain prose only. Separate sections with line breaks. Use section labels like "Overall Impression:", "Key Opportunities:", "What's Working Well:", and "Recommendation:" as plain text followed by a colon, nothing else.
+
+Do not comment on or suggest expanding the business's geographic service area. Do not suggest the business is limiting itself by serving a local or regional market. Local market focus is intentional and should not be flagged as an opportunity or weakness.`;
 
   try {
     const controller = new AbortController();
@@ -223,7 +225,7 @@ Keep it professional but direct. Use "you/your" to address the business owner. D
       body: JSON.stringify({
         model: "claude-sonnet-4-20250514",
         max_tokens: 600,
-        system: "You are a helpful website consultant who provides clear, actionable advice for small business owners.",
+        system: "You are a website consultant for Liminal Group LLC, a web design agency based in Indianapolis, Indiana. This tool analyzes a prospect's website and identifies opportunities for improvement. The recommendation section should always position Liminal Group as the solution and encourage the prospect to reach out or view pricing. Keep the tone consultative and confident, not generic. Never use markdown formatting — no asterisks, no pound signs, no headers, no bold. Plain prose only.",
         messages: [{ role: "user", content: prompt }],
       }),
       signal: controller.signal,

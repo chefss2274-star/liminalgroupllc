@@ -3,6 +3,14 @@
 import { useState } from "react";
 import Link from "next/link";
 
+function stripMarkdown(text: string): string {
+  return text
+    .replace(/\*\*(.*?)\*\*/g, '$1')
+    .replace(/\*(.*?)\*/g, '$1')
+    .replace(/#{1,6}\s/g, '')
+    .replace(/`(.*?)`/g, '$1');
+}
+
 interface CheckResult {
   label: string;
   passed: boolean;
@@ -257,7 +265,7 @@ export default function AuditPage() {
               <div className="audit-ai-section">
                 <h3 className="audit-ai-title">AI Analysis Summary</h3>
                 {result.ai_summary ? (
-                  <p className="audit-ai-text">{result.ai_summary}</p>
+                  <p className="audit-ai-text">{stripMarkdown(result.ai_summary)}</p>
                 ) : (
                   <p className="audit-ai-loading">Our team will review your site and send a detailed analysis to your email within 24 hours.</p>
                 )}
