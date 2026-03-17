@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface CheckResult {
   label: string;
@@ -265,6 +268,77 @@ Never reference Liminal Group's past clients, portfolio, or track record in spec
   }
 }
 
+async function sendAdminNotification(params: {
+  name: string;
+  business: string;
+  website: string;
+  email: string;
+  score: number;
+  aiSummary: string;
+}) {
+  const { name, business, website, email, score, aiSummary } = params;
+  const resendKey = process.env.RESEND_API_KEY;
+  if (!resendKey) {
+    console.warn("[audit/email] RESEND_API_KEY not set — skipping notification");
+    return;
+  }
+
+  const scoreLabel = score >= 70 ? "Good" : score >= 40 ? "Needs Work" : "Poor";
+  const scoreColor = score >= 70 ? "#27ae60" : score >= 40 ? "#d4850a" : "#c0392b";
+
+  const html = `
+    <div style="font-family: -apple-system, sans-serif; max-width: 600px; margin: 0 auto; background: #f9f8f5; padding: 32px;">
+      <div style="background: #1a1712; border-radius: 8px; padding: 24px 32px; margin-bottom: 24px;">
+        <p style="color: #c9a84c; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; margin: 0 0 8px;">Liminal Group</p>
+        <h1 style="color: #ffffff; font-size: 22px; font-weight: 700; margin: 0;">New Audit Submission</h1>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 8px; border: 1px solid #e8e4de; padding: 24px 32px; margin-bottom: 16px;">
+        <h2 style="font-size: 14px; font-weight: 600; color: #5a5651; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 16px;">Lead Info</h2>
+        <table style="width: 100%; border-collapse: collapse;">
+          <tr><td style="padding: 8px 0; color: #8a857e; font-size: 13px; width: 110px;">Name</td><td style="padding: 8px 0; color: #1a1a1a; font-size: 14px; font-weight: 500;">${name}</td></tr>
+          <tr><td style="padding: 8px 0; color: #8a857e; font-size: 13px;">Business</td><td style="padding: 8px 0; color: #1a1a1a; font-size: 14px; font-weight: 500;">${business}</td></tr>
+          <tr><td style="padding: 8px 0; color: #8a857e; font-size: 13px;">Website</td><td style="padding: 8px 0;"><a href="${website}" style="color: #7c6955; font-size: 14px;">${website}</a></td></tr>
+          <tr><td style="padding: 8px 0; color: #8a857e; font-size: 13px;">Email</td><td style="padding: 8px 0;"><a href="mailto:${email}" style="color: #7c6955; font-size: 14px;">${email}</a></td></tr>
+        </table>
+      </div>
+
+      <div style="background: #ffffff; border-radius: 8px; border: 1px solid #e8e4de; padding: 24px 32px; margin-bottom: 16px; text-align: center;">
+        <p style="color: #8a857e; font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 8px;">Audit Score</p>
+        <p style="font-size: 48px; font-weight: 700; color: ${scoreColor}; margin: 0; line-height: 1;">${score}</p>
+        <p style="color: ${scoreColor}; font-size: 13px; font-weight: 600; margin: 4px 0 0;">${scoreLabel}</p>
+      </div>
+
+      ${aiSummary ? `
+      <div style="background: #ffffff; border-radius: 8px; border: 1px solid #e8e4de; padding: 24px 32px; margin-bottom: 16px;">
+        <h2 style="font-size: 14px; font-weight: 600; color: #5a5651; text-transform: uppercase; letter-spacing: 0.1em; margin: 0 0 16px;">AI Summary</h2>
+        <p style="color: #3a3530; font-size: 14px; line-height: 1.7; margin: 0; white-space: pre-line;">${aiSummary}</p>
+      </div>
+      ` : ""}
+
+      <div style="text-align: center; padding: 8px;">
+        <a href="mailto:${email}?subject=Your%20Website%20Audit%20Results%20%E2%80%94%20${encodeURIComponent(business)}&body=Hi%20${encodeURIComponent(name)}%2C%0A%0AThank%20you%20for%20using%20Liminal%20Group%27s%20free%20website%20audit%20tool.%20I%20reviewed%20your%20results%20for%20${encodeURIComponent(business)}%20and%20would%20love%20to%20discuss%20how%20we%20can%20help.%0A%0ABest%2C%0ALiminal%20Group"
+          style="display: inline-block; background: #1a1712; color: #c9a84c; text-decoration: none; padding: 14px 32px; border-radius: 6px; font-size: 14px; font-weight: 600; letter-spacing: 0.05em;">
+          Reply to ${name} →
+        </a>
+      </div>
+    </div>
+  `;
+
+  try {
+    await resend.emails.send({
+      from: "Liminal Group Audit <onboarding@resend.dev>",
+      to: ["admin@liminalgroupllc.com"],
+      replyTo: email,
+      subject: `New Audit: ${business} — Score ${score}/100`,
+      html,
+    });
+    console.log(`[audit/email] Notification sent for ${business} (${email})`);
+  } catch (err) {
+    console.error("[audit/email] Failed to send notification:", err);
+  }
+}
+
 export async function POST(req: NextRequest) {
   let body: { name?: string; business?: string; website?: string; email?: string };
   try {
@@ -276,10 +350,18 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { website } = body;
+  const { name = "", business = "", website, email = "" } = body;
+
   if (!website) {
     return NextResponse.json(
       { success: false, url: "", score: 0, checks: [], ai_summary: "", error: "Website URL is required." },
+      { status: 400 }
+    );
+  }
+
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json(
+      { success: false, url: "", score: 0, checks: [], ai_summary: "", error: "A valid email address is required." },
       { status: 400 }
     );
   }
@@ -322,6 +404,16 @@ export async function POST(req: NextRequest) {
 
     const aiResult = await generateAiSummary(url, checks, html);
     console.log(`[audit] AI summary length: ${aiResult.text.length} chars${aiResult.error ? `, error: ${aiResult.error}` : ""}`);
+
+    // Fire-and-forget admin notification
+    sendAdminNotification({
+      name: name || "Unknown",
+      business: business || "Unknown",
+      website: url,
+      email,
+      score,
+      aiSummary: aiResult.text,
+    });
 
     return NextResponse.json({
       success: true,
