@@ -327,7 +327,7 @@ async function sendAdminNotification(params: {
 
   try {
     await resend.emails.send({
-      from: "Liminal Group Audit <onboarding@resend.dev>",
+      from: "Liminal Group Audit <audit@liminalgroupllc.com>",
       to: ["admin@liminalgroupllc.com"],
       replyTo: email,
       subject: `New Audit: ${business} — Score ${score}/100`,
