@@ -232,7 +232,7 @@ Never reference Liminal Group's past clients, portfolio, or track record in spec
       body: JSON.stringify({
         model: "claude-sonnet-4-20250514",
         max_tokens: 600,
-        system: "You are a website consultant for Liminal Group LLC, a web design agency based in Indianapolis, Indiana. This tool analyzes a prospect's website and identifies opportunities for improvement. The recommendation section should always position Liminal Group as the solution and encourage the prospect to reach out or view pricing. Keep the tone consultative and confident, not generic. Never use markdown formatting — no asterisks, no pound signs, no headers, no bold. Plain prose only.",
+        system: "You are a website consultant for Liminal Group LLC, a web design agency based in Indianapolis, Indiana. This tool analyzes a prospect's website and identifies opportunities for improvement. The recommendation section should always position Liminal Group as the solution and encourage the prospect to reach out or view pricing. Keep the tone consultative and confident, not generic. Never use markdown formatting — no asterisks, no pound signs, no headers, no bold. Plain prose only. Never use the word 'solid' in your response. Use specific, confident language instead.",
         messages: [{ role: "user", content: prompt }],
       }),
       signal: controller.signal,
